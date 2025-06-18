@@ -2,8 +2,8 @@
     "radio": [
         {
             "radio_genre": "Radio FM Del Lago",
-            "radio_url": "https://audio.miradioenvivo.com:8124",
-            "radio_image_url": "https://cdn.altomarketing.com/apps/cuarzo/fmdellago/logo.jpg",
+            "radio_url": "https://radio17.servidorderadio.net:8872",
+            "radio_image_url": "https://logos.suena.live/fmdellago.png",
             "background_image_url": "",
             "blur_radio_background": "false",
             "song_metadata": "true",
