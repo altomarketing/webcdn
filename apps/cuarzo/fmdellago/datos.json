@@ -5,12 +5,12 @@
             "radio_url": "https://radio14.servidorderadio.net:8872",
             "radio_image_url": "https://logos.suena.live/fmdellago.png",
             "background_image_url": "",
-            "blur_radio_background": "false",
+            "blur_radio_background": "true",
             "song_metadata": "true",
             "image_album_art": "true",
-            "image_album_art_dynamic_background": "false",
+            "image_album_art_dynamic_background": "true",
             "auto_play": "true",
-            "chatbox_url": ""
+            "chatbox_url": "https://salasdechat.altomarketing.com/"
         }
     ],
     "panel": [
@@ -22,12 +22,13 @@
             "logo_url": "",
             "menulogo_url": "",
             "radio_name": "Radio Fm del Lago",
-            "dominio_url": "",
+            "dominio_url": "https://fmdellago.com",
             "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
-            "web_url": "https://radioemanuelquiruvilca.com",
-            "whatsapp_url": "+51928517802",
-            "call_url": "+51928517802",
+            "web_url": "https://suena.live/fmdellago",
+            "whatsapp_url": "+542945412588",
+            "call_url": "+542945412588",
             "tiktok_url": "https://www.tiktok.com/@ismaelvillegasgiraldo",
+            "instagram_url": "https://www.instagram.com/fmdellagoesquel",
             "twitter_url": "https://www.facebook.com/profile.php?id=100087891344962"
         }
     ],
