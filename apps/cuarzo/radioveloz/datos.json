@@ -1,0 +1,45 @@
+{
+    "radio": [
+        {
+            "radio_genre": "Radio Ve-Loz",
+            "radio_url": "https://radio11.servidorderadio.net:8018",
+            "radio_image_url": "https://logos.suena.live/radioveloz.png",
+            "background_image_url": "",
+            "blur_radio_background": "true",
+            "song_metadata": "true",
+            "image_album_art": "true",
+            "image_album_art_dynamic_background": "true",
+            "auto_play": "true",
+            "chatbox_url": "https://salasdechat.altomarketing.com/"
+        }
+    ],
+    "panel": [
+        {
+            "fondo_url": "#ff0000",
+            "about_color": "#ff0000",
+            "statusBar_color": "#ff0000",
+            "navigationBar_color": "#ff0000",
+            "logo_url": "",
+            "menulogo_url": "",
+            "radio_name": "Radio Ve-Loz",
+            "dominio_url": "https://suena.live/radioveloz",
+            "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
+            "web_url": "https://suena.live/radioveloz",
+            "whatsapp_url": "+541127981335",
+            "call_url": "+541127981335",
+            "tiktok_url": "",
+            "instagram_url": "https://www.instagram.com/somosradioveloz/",
+            "twitter_url": ""
+        }
+    ],
+    "settings": [
+        {
+            "app_status": "1",
+            "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+            "fcm_notification_topic": "your_single_radio_topic",
+            "privacy_policy_url": "https://miradioenvivo.com/privacidad.html",
+            "more_apps_url": "https://play.google.com/store/apps/dev?id=6311068443759226410",
+            "redirect_url": ""
+        }
+    ]
+}
