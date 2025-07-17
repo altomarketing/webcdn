@@ -1,1 +1,45 @@
-aca va
+{
+    "radio": [
+        {
+            "radio_genre": "Vip Radio VenenosaX",
+            "radio_url": "https://radio17.servidorderadio.net/8132/stream",
+            "radio_image_url": "",
+            "background_image_url": "",
+            "blur_radio_background": "false",
+            "song_metadata": "true",
+            "image_album_art": "true",
+            "image_album_art_dynamic_background": "false",
+            "auto_play": "true",
+            "chatbox_url": ""
+        }
+    ],
+    "panel": [
+        {
+            "fondo_url": "#00000000",
+            "about_color": "#00000000",
+            "statusBar_color": "#5665EF",
+            "navigationBar_color": "#5665EF",
+            "logo_url": "",
+            "menulogo_url": "",
+            "radio_name": "Vip Radio VenenosaX",
+            "dominio_url": "",
+            "copyright_url": "Copyright © 2023 Oyotunstream Todo los derechos Reservados.",
+            "web_url": "",
+            "whatsapp_url": "",
+            "call_url": "",
+            "fanpage_url": "",
+            "tiktok_url": "",
+            "twitter_url": ""
+        }
+    ],
+    "settings": [
+        {
+            "app_status": "1",
+            "onesignal_app_id": "",
+            "fcm_notification_topic": "",
+            "privacy_policy_url": "",
+            "more_apps_url": "",
+            "redirect_url": ""
+        }
+    ]
+}
