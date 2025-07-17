@@ -10,7 +10,7 @@
             "image_album_art": "true",
             "image_album_art_dynamic_background": "false",
             "auto_play": "true",
-            "chatbox_url": ""
+            "chatbox_url": "https://salasdechat.altomarketing.com"
         }
     ],
     "panel": [
@@ -22,14 +22,14 @@
             "logo_url": "",
             "menulogo_url": "",
             "radio_name": "Vip Radio VenenosaX",
-            "dominio_url": "",
-            "copyright_url": "Copyright © 2023 Oyotunstream Todo los derechos Reservados.",
-            "web_url": "",
+            "dominio_url": "https://miradio.link/vipradiovenenosax",
+            "copyright_url": "Copyright © 2025 RadioNUBE Todo los derechos Reservados.",
+            "web_url": "https://miradio.link/vipradiovenenosax",
             "whatsapp_url": "",
             "call_url": "",
-            "fanpage_url": "",
-            "tiktok_url": "",
-            "twitter_url": ""
+            "fanpage_url": "https://www.facebook.com/profile.php?id=61564640190589?utm_source=suena.live",
+            "tiktok_url": "https://www.tiktok.com/@vip.radio.venenos?utm_source=suena.live",
+            "twitter_url": "https://www.instagram.com/vip_radio_bene?igsh=MTZwMW5ldHA1cDBpOQ==?utm_source=suena.live"
         }
     ],
     "settings": [
@@ -38,7 +38,7 @@
             "onesignal_app_id": "",
             "fcm_notification_topic": "",
             "privacy_policy_url": "",
-            "more_apps_url": "",
+            "more_apps_url": "https://www.RadioNube.online",
             "redirect_url": ""
         }
     ]
