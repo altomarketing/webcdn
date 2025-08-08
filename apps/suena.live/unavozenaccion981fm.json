@@ -1,0 +1,45 @@
+{
+    "radio": [
+        {
+            "radio_genre": "conectando tus sentidos",
+            "radio_url": "https://radio16.servidorderadio.net:8084",
+            "radio_image_url": "https://logos.suena.live/unavozenaccion981fm.png",
+            "background_image_url": "",
+            "blur_radio_background": "true",
+            "song_metadata": "true",
+            "image_album_art": "true",
+            "image_album_art_dynamic_background": "true",
+            "auto_play": "true",
+            "chatbox_url": "https://salasdechat.altomarketing.com/"
+        }
+    ],
+    "panel": [
+        {
+            "fondo_url": "#ff0000",
+            "about_color": "#ff0000",
+            "statusBar_color": "#ff0000",
+            "navigationBar_color": "#ff0000",
+            "logo_url": "",
+            "menulogo_url": "",
+            "radio_name": "conectando tus sentidos",
+            "dominio_url": "https://suena.live/unavozenaccion981fm",
+            "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
+            "web_url": "https://suena.live/unavozenaccion981fm",
+            "whatsapp_url": "+529613805811",
+            "call_url": "+529613805811",
+            "tiktok_url": "tik tok",
+            "instagram_url": "instagram",
+            "twitter_url": "https://www.facebook.com/unavozenaccion/"
+        }
+    ],
+    "settings": [
+        {
+            "app_status": "1",
+            "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+            "fcm_notification_topic": "your_single_radio_topic",
+            "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+            "more_apps_url": "https://serviciostreaming.com",
+            "redirect_url": ""
+        }
+    ]
+}
