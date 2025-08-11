@@ -8,7 +8,7 @@
             "blur_radio_background": "true",
             "song_metadata": "true",
             "image_album_art": "true",
-            "image_album_art_dynamic_background": "true",
+            "image_album_art_dynamic_background": "false",
             "auto_play": "true",
             "chatbox_url": "https://salasdechat.altomarketing.com/"
         }
