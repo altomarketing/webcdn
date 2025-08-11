@@ -4,7 +4,7 @@
             "radio_genre": "Noticias del Valle de Lerma Sur",
             "radio_url": "https://radio15.servidorderadio.net:8999/stream",
             "radio_image_url": "https://logos.suena.live/elmoldeo.png",
-            "background_image_url": "",
+            "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondo/fondoreligioso.jpg",
             "blur_radio_background": "true",
             "song_metadata": "true",
             "image_album_art": "true",
