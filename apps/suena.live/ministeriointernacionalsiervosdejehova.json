@@ -1,0 +1,45 @@
+{
+    "radio": [
+        {
+            "radio_genre": "clama a mi y yo te respondere",
+            "radio_url": "https://radio11.servidorderadio.net:8092/stream",
+            "radio_image_url": "https://logos.suena.live/ministeriointernacionalsiervosdejehova.png",
+            "background_image_url": "",
+            "blur_radio_background": "true",
+            "song_metadata": "true",
+            "image_album_art": "true",
+            "image_album_art_dynamic_background": "true",
+            "auto_play": "true",
+            "chatbox_url": "https://salasdechat.altomarketing.com/"
+        }
+    ],
+    "panel": [
+        {
+            "fondo_url": "#ff0000",
+            "about_color": "#ff0000",
+            "statusBar_color": "#ff0000",
+            "navigationBar_color": "#ff0000",
+            "logo_url": "",
+            "menulogo_url": "",
+            "radio_name": "clama a mi y yo te respondere",
+            "dominio_url": "https://suena.live/ministeriointernacionalsiervosdejehova",
+            "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
+            "web_url": "https://suena.live/ministeriointernacionalsiervosdejehova",
+            "whatsapp_url": "+542996539949",
+            "call_url": "+542996539949",
+            "tiktok_url": "no",
+            "instagram_url": "no",
+            "twitter_url": "no"
+        }
+    ],
+    "settings": [
+        {
+            "app_status": "1",
+            "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+            "fcm_notification_topic": "your_single_radio_topic",
+            "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+            "more_apps_url": "https://serviciostreaming.com",
+            "redirect_url": ""
+        }
+    ]
+}
