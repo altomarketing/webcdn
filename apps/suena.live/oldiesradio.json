@@ -4,7 +4,7 @@
             "radio_genre": "Donde Viven los Clasicos",
             "radio_url": "https://radio16.servidorderadio.net:8082",
             "radio_image_url": "https://logos.suena.live/oldiesradio.png",
-            "background_image_url": "",
+            "background_image_url": "https://raw.githubusercontent.com/altomarketing/cdn/main/uploads/images/fondos/fondo.webp",
             "blur_radio_background": "true",
             "song_metadata": "true",
             "image_album_art": "true",
