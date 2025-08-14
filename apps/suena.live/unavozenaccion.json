@@ -2,7 +2,7 @@
     "radio": [
         {
             "radio_genre": "conectando tus sentidos",
-            "radio_url": "https://radio16.servidorderadio.net:8084",
+            "radio_url": "https://radio16.servidorderadio.net/8084/stream",
             "radio_image_url": "https://logos.suena.live/unavozenaccion981fm.png",
             "background_image_url": "",
             "blur_radio_background": "true",
