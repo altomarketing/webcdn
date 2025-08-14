@@ -4,7 +4,7 @@
             "radio_genre": "conectando tus sentidos",
             "radio_url": "https://radio16.servidorderadio.net/8084/stream",
             "radio_image_url": "https://logos.suena.live/unavozenaccion.png",
-            "background_image_url": "",
+            "background_image_url": "https://raw.githubusercontent.com/altomarketing/cdn/main/uploads/images/fondo/fondoreligioso.jpg",
             "blur_radio_background": "true",
             "song_metadata": "true",
             "image_album_art": "true",
@@ -29,7 +29,9 @@
             "call_url": "+529613805811",
             "tiktok_url": "tik tok",
             "instagram_url": "instagram",
-            "twitter_url": "https://www.facebook.com/unavozenaccion/"
+            "twitter_url": "",
+            "facebook_url": "https://www.facebook.com/unavozenaccion/"
+            
         }
     ],
     "settings": [
