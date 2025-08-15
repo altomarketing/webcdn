@@ -1,0 +1,47 @@
+{
+    "radio": [
+        {
+            "radio_genre": "Estamos en onda, estamos BIEN ARRIBA",
+            "radio_url": "https://radio17.servidorderadio.net:8076/stream",
+            "radio_image_url": "https://logos.suena.live/bienarriba.png",
+            "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
+            "blur_radio_background": "true",
+            "song_metadata": "true",
+            "image_album_art": "true",
+            "image_album_art_dynamic_background": "true",
+            "auto_play": "true",
+            "chatbox_url": "https://salasdechat.altomarketing.com/"
+        }
+    ],
+    "panel": [
+        {
+            "fondo_url": "#ff0000",
+            "about_color": "#ff0000",
+            "statusBar_color": "#ff0000",
+            "navigationBar_color": "#ff0000",
+            "logo_url": "",
+            "menulogo_url": "",
+            "radio_name": "Estamos en onda, estamos BIEN ARRIBA",
+            "dominio_url": "https://suena.live/bienarriba",
+            "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
+            "web_url": "https://suena.live/bienarriba",
+            "whatsapp_url": "++59893619617" ,
+            "call_url": "++59893619617",
+            "tiktok_url": "https://www.tiktok.com/@bien_arriba_valeria",
+            "instagram_url": "https://www.instagram.com/radiovibradigitaluruguay/?hl=en",
+            "twitter_url": "NO",
+            "facebook_url": "https://www.facebook.com/profile.php?id=61561295813756&locale=es_LA",
+
+        }
+    ],
+    "settings": [
+        {
+            "app_status": "1",
+            "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+            "fcm_notification_topic": "your_single_radio_topic",
+            "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+            "more_apps_url": "https://serviciostreaming.com",
+            "redirect_url": ""
+        }
+    ]
+}
