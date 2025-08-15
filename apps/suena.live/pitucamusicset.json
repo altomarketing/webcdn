@@ -4,7 +4,7 @@
             "radio_genre": "El arte de la compañía a través de la música",
             "radio_url": "https://radio11.servidorderadio.net:8030/stream",
             "radio_image_url": "https://logos.suena.live/pitucamusicset.png",
-            "background_image_url": "",
+            "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
             "blur_radio_background": "true",
             "song_metadata": "true",
             "image_album_art": "true",
