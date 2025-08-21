@@ -5,9 +5,9 @@
             "radio_url": "https://radio16.servidorderadio.net/8010/stream",
             "radio_image_url": "https://logos.suena.live/alvayerosradio.png",
             "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
-            "blur_radio_background": "true",
+            "blur_radio_background": "false",
             "song_metadata": "true",
-            "image_album_art": "true",
+            "image_album_art": "false",
             "image_album_art_dynamic_background": "false",
             "auto_play": "true",
             "chatbox_url": "https://salasdechat.altomarketing.com/"
