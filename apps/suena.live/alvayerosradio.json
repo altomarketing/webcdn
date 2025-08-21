@@ -27,10 +27,10 @@
             "web_url": "https://suena.live/alvayerosradio",
             "whatsapp_url": "++19363671045" ,
             "call_url": "++19363671045",
-            "tiktok_url": "https://www.tiktok.com/@alvayeros.radio?is_from_webapp=1&sender_device=pc",
-            "instagram_url": "https://instagram.com/alvayeros.radio",
+            "tiktok_url": "",
+            "instagram_url": "",
             "twitter_url": "",
-            "facebook_url": "https://www.facebook.com/profile.php?id=61579352482993&sk=about"
+            "facebook_url": ""
 
 
 
@@ -43,7 +43,7 @@
             "fcm_notification_topic": "your_single_radio_topic",
             "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
             "more_apps_url": "https://serviciostreaming.com",
-            "redirect_url": ""
+            "redirect_url": "https://serviciostreaming.com"
         }
     ]
 }
