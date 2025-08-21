@@ -5,10 +5,10 @@
             "radio_url": "https://radio16.servidorderadio.net/8010/stream",
             "radio_image_url": "https://logos.suena.live/alvayerosradio.png",
             "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
-            "blur_radio_background": "false",
+            "blur_radio_background": "true",
             "song_metadata": "true",
-            "image_album_art": "false",
-            "image_album_art_dynamic_background": "false",
+            "image_album_art": "true",
+            "image_album_art_dynamic_background": "true",
             "auto_play": "true",
             "chatbox_url": "https://salasdechat.altomarketing.com/"
         }
@@ -25,11 +25,11 @@
             "dominio_url": "https://suena.live/alvayerosradio",
             "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
             "web_url": "https://suena.live/alvayerosradio",
-            "whatsapp_url": "++19363671045" ,
-            "call_url": "++19363671045",
+            "whatsapp_url": "+19363671045" ,
+            "call_url": "+19363671045",
             "tiktok_url": "https://www.tiktok.com/@alvayeros.radio?is_from_webapp=1&sender_device=pc",
             "instagram_url": "https://instagram.com/alvayeros.radio",
-            "twitter_url": "no",
+            "twitter_url": "",
             "facebook_url": "https://www.facebook.com/profile.php?id=61579352482993&sk=about"
 
 
