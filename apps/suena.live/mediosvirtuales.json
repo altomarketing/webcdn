@@ -2,7 +2,7 @@
     "radio": [
         {
             "radio_genre": "Todos los días noticias locales, provinciales y regionales",
-            "radio_url": "https://radio22.servidorderadio.net/8156/stream",
+            "radio_url": "https://radio22.servidorderadio.net:8156/stream",
             "radio_image_url": "https://logos.suena.live/mediosvirtuales.png",
             "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
             "blur_radio_background": "true",
