@@ -1,49 +1,60 @@
 {
-    "radio": [
-        {
-            "radio_genre": "Canal de TV para todos con mensaje de esperanza a nuestra generación.",
-            "radio_url": "https://radio16.servidorderadio.net/8026/stream",
-            "radio_image_url": "https://logos.suena.live/lumbreratv.png",
-            "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
-            "blur_radio_background": "true",
-            "song_metadata": "true",
-            "image_album_art": "true",
-            "image_album_art_dynamic_background": "true",
-            "auto_play": "true",
-            "chatbox_url": "https://salasdechat.altomarketing.com/"
-        }
-    ],
-    "panel": [
-        {
-            "fondo_url": "#ff0000",
-            "about_color": "#ff0000",
-            "statusBar_color": "#ff0000",
-            "navigationBar_color": "#ff0000",
-            "logo_url": "https://logos.suena.live/lumbreratv.png",
-            "menulogo_url": "",
-            "radio_name": "Canal de TV para todos con mensaje de esperanza a nuestra generación.",
-            "dominio_url": "https://suena.live/lumbreratv",
-            "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
-            "web_url": "https://suena.live/lumbreratv",
-            "whatsapp_url": "++17874860888" ,
-            "call_url": "++17874860888",
-            "tiktok_url": "no",
-            "instagram_url": "https://www.instagram.com/lumbreratvoficial",
-            "twitter_url": "no",
-            "facebook_url": "https://www.facebook.com/lumbreratvoficial"
-
-
-
-        }
-    ],
-    "settings": [
-        {
-            "app_status": "1",
-            "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
-            "fcm_notification_topic": "your_single_radio_topic",
-            "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
-            "more_apps_url": "https://serviciostreaming.com",
-            "redirect_url": "https://serviciostreaming.com"
-        }
-    ]
+  "radio": [
+    {
+      "radio_genre": "Canal de TV para todos con mensaje de esperanza a nuestra generación.",
+      "radio_url": "https://radio16.servidorderadio.net/8026/stream",
+      "radio_image_url": "https://logos.suena.live/lumbreratv.png",
+      "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
+      "blur_radio_background": "true",
+      "song_metadata": "true",
+      "image_album_art": "true",
+      "image_album_art_dynamic_background": "true",
+      "auto_play": "true",
+      "chatbox_url": "https://salasdechat.altomarketing.com/"
+    }
+  ],
+  "video": [
+    {
+      "streaming_url": "https://streamtv2.elitecomunicacion.cloud:3628/live/arabitv2025live.m3u8",
+      "banned_id": "ca-app-pub-3940256099942544/2934735716",
+      "appstore_id": "6748922686",
+      "autoplay_at_start": true,
+      "notificatios_enabled": true,
+      "neomorphosm_disabled": false,
+      "terms_url": "https://skynetinformatica.net/apps/radios/ios/arabitvyecla/terms.html",
+      "privacy_url": "https://skynetinformatica.net/apps/radios/ios/arabitvyecla/politics.html",
+      "contact_email": "arielflomenbaumt@icloud.com",
+      "about_website": "https://api.whatsapp.com/send?phone=5492664933132"
+    }
+  ],
+  "panel": [
+    {
+      "fondo_url": "#ff0000",
+      "about_color": "#ff0000",
+      "statusBar_color": "#ff0000",
+      "navigationBar_color": "#ff0000",
+      "logo_url": "https://logos.suena.live/lumbreratv.png",
+      "menulogo_url": "",
+      "radio_name": "Canal de TV para todos con mensaje de esperanza a nuestra generación.",
+      "dominio_url": "https://suena.live/lumbreratv",
+      "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
+      "web_url": "https://suena.live/lumbreratv",
+      "whatsapp_url": "++17874860888",
+      "call_url": "++17874860888",
+      "tiktok_url": "",
+      "instagram_url": "https://www.instagram.com/lumbreratvoficial",
+      "twitter_url": "",
+      "facebook_url": "https://www.facebook.com/lumbreratvoficial"
+    }
+  ],
+  "settings": [
+    {
+      "app_status": "1",
+      "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+      "fcm_notification_topic": "your_single_radio_topic",
+      "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+      "more_apps_url": "https://serviciostreaming.com",
+      "redirect_url": "https://serviciostreaming.com"
+    }
+  ]
 }
