@@ -1,0 +1,47 @@
+{
+    "radio": [
+        {
+            "radio_genre": "ESTAS ESCUCHANDO LA MUSICA QUE  A TI TE GUSTA",
+            "radio_url": "https://radio16.servidorderadio.net/8030/stream",
+            "radio_image_url": "https://logos.suena.live/radiogrupotlaltenango.png",
+            "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
+            "blur_radio_background": "true",
+            "song_metadata": "true",
+            "image_album_art": "true",
+            "image_album_art_dynamic_background": "true",
+            "auto_play": "true",
+            "chatbox_url": "https://salasdechat.altomarketing.com/"
+        }
+    ],
+    "panel": [
+        {
+            "fondo_url": "#ff0000",
+            "about_color": "#ff0000",
+            "statusBar_color": "#ff0000",
+            "navigationBar_color": "#ff0000",
+            "logo_url": "",
+            "menulogo_url": "",
+            "radio_name": "ESTAS ESCUCHANDO LA MUSICA QUE  A TI TE GUSTA",
+            "dominio_url": "https://suena.live/radiogrupotlaltenango",
+            "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
+            "web_url": "https://suena.live/radiogrupotlaltenango",
+            "whatsapp_url": "+524374790469",
+            "call_url": "+524374790469",
+            "tiktok_url": "",
+            "instagram_url": "",
+            "twitter_url": "",
+            "facebook_url": ""
+
+        }
+    ],
+    "settings": [
+        {
+            "app_status": "1",
+            "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+            "fcm_notification_topic": "your_single_radio_topic",
+            "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+            "more_apps_url": "https://serviciostreaming.com",
+            "redirect_url": ""
+        }
+    ]
+}
