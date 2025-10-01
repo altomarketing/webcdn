@@ -2,7 +2,7 @@
     "radio": [
         {
             "radio_genre": "Radio SER",
-            "radio_url": "https://radio16.servidorderadio.net:8006",
+            "radio_url": "https://radio22.servidorderadio.net:8104/stream",
             "radio_image_url": "https://logos.suena.live/radioser.png",
             "background_image_url": "",
             "blur_radio_background": "true",
