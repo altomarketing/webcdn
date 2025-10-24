@@ -1,0 +1,192 @@
+/* ================================================= */
+/* 1. ELEMENTOS DE NAVEGACIÓN (MENÚ)        */
+/* ================================================= */
+
+.menu-toggle {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    font-size: 28px;
+    background: transparent;
+    border: none;
+    color: white;
+    z-index: 10001;
+    cursor: pointer;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    /* Se cambió el color de fondo sólido por el gradiente final para simplificar */
+    background: linear-gradient(180deg, #0d1b3d, #0c0c3c); 
+    color: white;
+    padding: 20px;
+    padding-top: 60px; /* Consolidado de una definición posterior */
+    transition: left 0.3s ease;
+    z-index: 10000;
+    font-family: Arial, sans-serif;
+}
+
+.menu-overlay.open {
+    left: 0;
+}
+
+.menu-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-overlay h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+/* Consolidación de todas las reglas para los botones y enlaces del menú */
+.menu-overlay button,
+.menu-overlay a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px; /* Consolidado de 10px y 12px */
+    width: 100%; /* Del bloque inicial */
+    background: #01285f; /* Del bloque final */
+    border: none;
+    border-radius: 24px; /* Consolidado de 6px y 24px */
+    padding: 12px 16px; /* Consolidado de 12px y 10px 14px */
+    margin: 12px 0; /* Consolidado de 10px 0 y 12px 0 */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Se eliminaron los !important redundantes ya que esta es la última definición */
+}
+
+.menu-overlay button:hover,
+.menu-overlay a:hover {
+    background: #014aad; /* Consolidado de #0059b3 y #014aad */
+    transform: scale(1.03);
+}
+
+.menu-overlay button img,
+.menu-overlay a img {
+    height: 24px; /* Consolidado de 22px y 24px */
+    width: 24px; /* Consolidado de 22px y 24px */
+    object-fit: contain;
+    flex-shrink: 0; /* Mantenido de una definición previa */
+}
+
+.menu-overlay button span,
+.menu-overlay a span {
+    flex-grow: 1;
+    text-align: left;
+}
+
+
+/* ================================================= */
+/* 2. ESTILOS DE CUERPO Y FONDO            */
+/* ================================================= */
+
+body {
+    /* El background del body con la imagen se movió a body::before para que solo se use allí */
+    background: none !important; /* Mantenido para asegurar que body::before tome el fondo */
+    overflow-x: hidden; /* Mantenido del bloque final */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+/* Imagen de fondo con animación - Consolidado */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://i.postimg.cc/CLrM6RqS/Picsart-25-06-22-02-35-39-017.png") no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    animation: backgroundZoom 25s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* El segundo body::before que tenía el gradiente, se eliminó para mantener la imagen de fondo */
+/* Si deseas usar el fondo degradado en lugar de la imagen:
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, #000428, #004e92);
+    z-index: -1;
+    transform-origin: center;
+    animation: fondoZoom 12s ease-in-out infinite;
+}
+*/
+
+/* ================================================= */
+/* 3. ANIMACIONES (Keyframes) GENERALES       */
+/* ================================================= */
+
+@keyframes backgroundZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulseZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes flip3D {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes zoomSuave {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Keyframes de animación vacíos corregidos con un valor predeterminado */
+@keyframes pulseBorder {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+@keyframes heartbeat {
+    0%, 28%, 70%, 100% { transform: scale(1); }
+    14%, 42% { transform: scale(1.3); }
+}
+
+@keyframes pulsePlay {
+    0% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(30, 144, 255, 0); }
+    100% { box-shadow:
