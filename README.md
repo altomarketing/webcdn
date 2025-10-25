@@ -1,6 +1,8 @@
 
  - *cpanel* son las por defecto para los hosting
 	 - /apps 
+	 -- /pwa - estas son las pwa
+	 --- / limay es la app autoadministrable
 	 - /cuarzo  estas son las viejas cuerzo que estan online
 	 - /opalina es android
 	 -  /suena.live 
