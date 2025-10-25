@@ -1,0 +1,11 @@
+#likeButton {
+    color: #ef4444;
+}
+
+#likeButton:hover {
+    transform: scale(1.1);
+}
+
+body.dark-mode #likeButton {
+    color: #ef4444;
+}

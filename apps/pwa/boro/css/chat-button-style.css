@@ -1,0 +1,84 @@
+
+
+.chat-button {
+    position: fixed;
+    bottom: 8rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+    color: white;
+    width: auto;
+    height: 50px;
+    padding: 0 1.5rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+    gap: 0.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.chat-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(59, 130, 246, 0.4);
+}
+
+.chat-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .chat-button {
+        bottom: 4rem;
+        right: 0.75rem;
+        height: 45px;
+        padding: 0 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .chat-button svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-button {
+        bottom: 4rem;
+        right: 0.75rem;
+        height: 40px;
+        padding: 0 1rem;
+        font-size: 0.8rem;
+    }
+
+    .chat-button svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 360px) {
+    .chat-button {
+        bottom: 4rem;
+    }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+    .chat-button {
+        bottom: 4rem;
+    }
+}
+
+body.dark-mode .chat-button {
+    background: linear-gradient(135deg, #1E40AF, #6D28D9);
+    box-shadow: 0 4px 6px rgba(31, 41, 55, 0.4);
+}
+
+body.dark-mode .chat-button:hover {
+    box-shadow: 0 6px 8px rgba(31, 41, 55, 0.5);
+}
