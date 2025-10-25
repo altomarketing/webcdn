@@ -1,0 +1,222 @@
+ 
+body {
+    background: #f0f2f5;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.panel-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    transition: background-color 0.3s ease;
+}
+h1 { color: #3B82F6; text-align: center; margin-bottom: 2rem; }
+
+.tabs { display: flex; border-bottom: 2px solid #e5e7eb; margin-bottom: 2rem; }
+.tab-button { padding: 1rem 1.5rem; cursor: pointer; border: none; background: none; font-size: 1rem; font-weight: 600; color: #6b7280; position: relative; transition: color 0.3s; }
+.tab-button.active { color: #3B82F6; }
+.tab-button.active::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background-color: #3B82F6; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem; box-sizing: border-box; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+.save-button { background: linear-gradient(135deg, #3B82F6, #8B5CF6); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 0.5rem; cursor: pointer; font-size: 1rem; width: 100%; transition: transform 0.2s; }
+.save-button:hover { transform: translateY(-2px); }
+.form-hint { font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; }
+
+@media (min-width: 768px) {
+    .form-row { display: flex; gap: 1.5rem; }
+    .form-row .form-group { flex: 1; margin-bottom: 1rem; }
+}
+.image-upload-group {
+    margin-bottom: 1.5rem;
+}
+.image-upload-group > label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+.image-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.image-preview-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+.image-preview-wrapper img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    display: block;
+}
+.image-preview-wrapper img[alt*="redes sociales"] {
+    width: 190px;
+    height: 100px;
+}
+.cancel-upload-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    background-color: #333;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    background-color: #f0f2f5;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+.custom-file-upload:hover {
+    background-color: #e5e7eb;
+}
+.live-controls-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.live-info-panel {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap; 
+    overflow: hidden; 
+    flex-grow: 1;
+}
+.live-info-panel span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+}
+.live-info-panel span i {
+    width: 18px;
+    height: 18px;
+    color: #6b7280;
+    flex-shrink: 0; 
+}
+#onlineListeners {
+    flex-shrink: 0; 
+}
+#currentSongTitlePanel {
+    flex-grow: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#currentSongTitlePanel .song-text {
+    display: inline-block;
+}
+
+#currentSongTitlePanel.scrolling .song-text {
+    padding-left: 100%;
+    animation: marquee-infinite linear infinite;
+}
+
+@keyframes marquee-infinite {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.stat-card { background: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; transition: background-color 0.3s ease, border-color 0.3s ease; }
+.stat-card h3 { margin-top: 0; color: #111827; }
+.panel-notification { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(150px); padding: 1rem 1.5rem; border-radius: 0.5rem; color: white; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 3000; transition: transform 0.4s ease-in-out; text-align: center; }
+.panel-notification.show { transform: translateX(-50%) translateY(0); }
+.panel-notification.success { background-color: #22c55e; }
+.panel-notification.error { background-color: #ef4444; }
+.password-wrapper { position: relative; display: flex; align-items: center; }
+.password-wrapper input { padding-right: 3rem; }
+.toggle-password { position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 0.5rem; color: #9ca3af; display: flex; align-items: center; justify-content: center; }
+.toggle-password:hover { color: #374151; }
+.theme-toggle-panel { position: fixed; top: 1rem; right: 1rem; background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+.theme-toggle-panel:hover { transform: scale(1.1); }
+.chat-placeholder { text-align: center; padding: 4rem 1rem; border: 2px dashed #ddd; border-radius: 0.5rem; margin-top: 1rem; }
+.chat-placeholder h3 { margin-top: 0; margin-bottom: 1.5rem; }
+.chat-placeholder .save-button { width: auto; padding: 0.8rem 1.5rem; }
+#panelPlayPauseButton {
+    background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+    color: white;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0;
+}
+#panelPlayPauseButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(59, 130, 246, 0.3);
+}
+body.dark-mode { background: #111827; color: #e5e7eb; }
+body.dark-mode .panel-container { background: #1f2937; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+body.dark-mode h1 { color: #93C5FD; }
+body.dark-mode .form-group label, body.dark-mode .image-upload-group > label { color: #d1d5db; }
+body.dark-mode .form-group input, body.dark-mode textarea { background-color: #374151; border-color: #4b5563; color: #e5e7eb; }
+body.dark-mode .tabs { border-bottom-color: #374151; }
+body.dark-mode .tab-button { color: #9ca3af; }
+body.dark-mode .tab-button.active { color: #93C5FD; }
+body.dark-mode .tab-button.active::after { background-color: #93C5FD; }
+body.dark-mode .stat-card { background: #1f2937; border-color: #374151; }
+body.dark-mode .stat-card h3 { color: #e5e7eb; }
+body.dark-mode .toggle-password { color: #9ca3af; }
+body.dark-mode .toggle-password:hover { color: #e5e7eb; }
+body.dark-mode .theme-toggle-panel { background: #374151; color: #e5e7eb; border-color: #4b5563; }
+body.dark-mode .chat-placeholder { border-color: #4b5563; }
+body.dark-mode .form-hint { color: #9ca3af; }
+body.dark-mode .custom-file-upload { background-color: #374151; border-color: #4b5563; color: #e5e7eb; }
+body.dark-mode .custom-file-upload:hover { background-color: #4b5563; }
+body.dark-mode .live-info-panel { background-color: #1f2937; border-color: #374151; }
+body.dark-mode .live-info-panel span { color: #d1d5db; }
+body.dark-mode .live-info-panel span i { color: #9ca3af; }
+body.dark-mode #panelPlayPauseButton {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
