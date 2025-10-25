@@ -2,7 +2,7 @@
     "radio": [
         {
             "radio_genre": "Conocer la VERDAD NOS HACE LIBRES ",
-            "radio_url": "https://radio.servidorderadio.net//stream",
+            "radio_url": "https://radio15.servidorderadio.net/8072/stream",
             "radio_image_url": "https://logos.suena.live/granoradio.png",
             "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
             "blur_radio_background": "true",
@@ -19,18 +19,20 @@
             "about_color": "#ff0000",
             "statusBar_color": "#ff0000",
             "navigationBar_color": "#ff0000",
-            "logo_url": "",
+            "logo_url": "https://logos.suena.live/granoradio.png",
             "menulogo_url": "",
             "radio_name": "Conocer la VERDAD NOS HACE LIBRES ",
             "dominio_url": "https://suena.live/granoradio",
-            "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
+            "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
             "web_url": "https://suena.live/granoradio",
-            "whatsapp_url": "+543886562869",
-            "call_url": "+543886562869",
-            "tiktok_url": "",
-            "instagram_url": "",
-            "twitter_url": "",
-            "facebook_url": ""
+            "whatsapp_url": "++543886562869" ,
+            "call_url": "++543886562869",
+            "tiktok_url": "Mo",
+            "instagram_url": "https://www.instagram.com/granoenlamatrix_4.0?igsh=OHA4Njdkcm9jY3Ax",
+            "twitter_url": "No",
+            "facebook_url": "No"
+
+
 
         }
     ],
@@ -41,7 +43,7 @@
             "fcm_notification_topic": "your_single_radio_topic",
             "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
             "more_apps_url": "https://serviciostreaming.com",
-            "redirect_url": ""
+            "redirect_url": "https://serviciostreaming.com"
         }
     ]
 }
