@@ -19,18 +19,23 @@
             "about_color": "#ff0000",
             "statusBar_color": "#ff0000",
             "navigationBar_color": "#ff0000",
-            "logo_url": "",
+            "logo_url": "https://logos.suena.live/superiorityradio.png",
             "menulogo_url": "",
             "radio_name": "somos la emisora que pone todos los sonidos latinos alternativos.¡Vuelve a encender la radio!",
             "dominio_url": "https://suena.live/superiorityradio",
-            "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
+            "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
             "web_url": "https://suena.live/superiorityradio",
-            "whatsapp_url": "+573247663530",
-            "call_url": "+573247663530",
-            "tiktok_url": "",
-            "instagram_url": "",
-            "twitter_url": "",
-            "facebook_url": ""
+      
+  "whatsapp_url": "++573247663530",
+  "call_url": "++573247663530",
+  "tiktok_url": "https://www.tiktok.com/@superiorityradioonline",
+  "instagram_url": "https://www.instagram.com/superiorityradioonline/",
+  "twitter_url": "https://x.com/SuperiorityR",
+  "facebook_url": "https://www.facebook.com/SuperiorityRadiofm?locale=es_LA"
+
+
+
+
 
         }
     ],
@@ -41,7 +46,7 @@
             "fcm_notification_topic": "your_single_radio_topic",
             "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
             "more_apps_url": "https://serviciostreaming.com",
-            "redirect_url": ""
+            "redirect_url": "https://serviciostreaming.com"
         }
     ]
 }
