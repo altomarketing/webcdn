@@ -25,12 +25,15 @@
             "dominio_url": "https://suena.live/tangounsentimiento",
             "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
             "web_url": "https://suena.live/tangounsentimiento",
-            "whatsapp_url": "++541161805140" ,
-            "call_url": "++541161805140",
-            "tiktok_url": "no",
-            "instagram_url": "no",
-            "twitter_url": "No",
-            "facebook_url": "https://www.facebook.com/share/1F4zEGFbT7/"
+      {
+  "whatsapp_url": "++541161805140",
+  "call_url": "++541161805140",
+  "tiktok_url": "",
+  "instagram_url": "",
+  "twitter_url": "",
+  "facebook_url": "https://www.facebook.com/share/1F4zEGFbT7/"
+}
+
 
 
 
