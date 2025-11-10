@@ -1,0 +1,260 @@
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    color: white;
+    height: 60px;
+    z-index: 9999;
+    border-radius: 50%;
+    background-color: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.floating-whatsapp img {
+    width: 30px;
+    height: 30px;
+    color: white;
+    /* Esto aplicará si el SVG usa fill="currentColor" */
+}
+
+/* 📱 Ajuste solo para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .floating-whatsapp {
+        bottom: 110px;
+        /* más arriba en móviles */
+        width: 50px;
+        /* un poco más pequeño */
+        height: 50px;
+    }
+
+    .floating-whatsapp svg {
+        width: 24px;
+        /* tamaño proporcional al botón */
+        height: 24px;
+    }
+}
+
+
+
+
+
+.team-item {
+    aspect-ratio: 5 / 6;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0rem;
+}
+
+
+.footer {
+    background-color: #0084ff;
+    color: var(--player-footer-color);
+}
+
+.app-item svg {
+    height: 35px;
+}
+
+.schedule-item {
+    aspect-ratio: 16 / 9;
+    position: relative;
+    box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgb(255, 255, 0);
+    overflow: hidden;
+    border-radius: 4px;
+    border-bottom: 6px solid var(--program-accent, #0084ff);
+    background-color: #000;
+}
+
+
+
+.social-item {
+    transition: color var(--player-duration);
+    padding: 0.3rem;
+    background-color: var(--player-social-bg, rgba(255, 255, 255, 0.2));
+    border-radius: 999px;
+    color: var(--player-social-color, #fff);
+}
+
+
+.social-item {
+    transition: transform 0.3s ease, color 0.3s ease;
+    background-color: rgb(255 255 255);
+        color: black;
+}
+
+.social-item:hover {
+    color: var(--player-primary);
+    transform: scale(1.1);
+    /* Aumenta un 10% al hacer hover */
+}
+
+
+.schedule-item.is-current .schedule-item-content::before {
+    content: "Al aire";
+    background-color: var(--program-accent);
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+    border-radius: 25rem;
+    margin-bottom: 0.5rem;
+    display: inline-flex;
+    font-weight: 800;
+    font-family: Montserrat, sans-serif;
+    line-height: 1.5;
+}
+
+
+.btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    padding: var(--btn-padding, 0.5rem);
+    font-size: var(--btn-fs, 0.875rem);
+    transition-property: background-color, color;
+    transition-duration: var(--player-duration);
+    display: inline-flex;
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+    align-items: center;
+    column-gap: var(--icon-gap, 0.5rem);
+    line-height: 1.5;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.header-wrapper {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+.section-name {
+    background-color: var(--main-body-bg);
+    padding-right: 1.25rem;
+    color: var(--color-title);
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.program-button {
+    padding: 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    color: var(--color-title);
+    flex: 1 0 auto;
+}
+
+.videoTops-item::before {
+    content: counter(ytlist-item);
+    width: 2rem;
+    text-align: center;
+    background-color: var(--ytlist-bg-number);
+    transition: background-color 0.3s ease;
+    color: white;
+    line-height: var(--vtops-item-height);
+    font-weight: 800;
+    font-family: Montserrat, sans-serif;
+    flex: none;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+    font-family: Montserrat, sans-serif;
+}
+
+.channel-title {
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: Montserrat, sans-serif;
+    --line-clamp: 1;
+}
+
+.station-name {
+    font-weight: 800;
+    font-family: Montserrat, sans-serif;
+}
+
+
+.btn:hover {
+    background-color: rgb(255, 255, 0);
+    color: #ffffff;
+}
+
+.channel-description {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.news-thumb-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1rem);
+}
+
+body {
+    font-family: var(--secondary-font);
+    overflow-x: hidden;
+    line-height: 1.5;
+    background-color: var(--body-bg);
+    color: var(--color-text);
+    background-image: url('https://us.123rf.com/450wm/latkun/latkun2110/latkun211001974/176484631-fondo-de-papel-amarillo-azul-de-dos-tonos-de-color.jpg?ver=6');
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+    background-position: center;
+    background-size: auto;
+}
+
+.prm-image {
+    width: 180px;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: 5px solid rgba(255, 255, 255, 0);
+    box-shadow: 0px 8px 17px 2px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    border-bottom: 5px solid #0084ff;
+}
+
+.team-title {
+    font-weight: 800;
+}
+
+.news-thumb-title {
+    color: #fff;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+.section-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.section-name svg {
+    flex-shrink: 0;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+}
+
