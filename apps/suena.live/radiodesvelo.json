@@ -1,5 +1,5 @@
 {
-  "start_screen": "TV", //radio o tv
+  "start_screen": "TV", 
 
   "stream_url": "https://video8.servidordevideo.net:3524/live/cgeqpuiylive.m3u8",
 
