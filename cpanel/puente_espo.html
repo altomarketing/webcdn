@@ -2,79 +2,93 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Conectando CRM...</title>
+<title>Puente Debug</title>
 <style>
-  body { font-family: sans-serif; text-align: center; padding: 30px; color: #444; }
-  .btn { 
-    display: block; margin: 10px auto; padding: 12px 20px; 
-    background: #2a5885; color: white; text-decoration: none; 
-    border-radius: 4px; font-weight: bold; width: 80%;
-  }
-  .btn:hover { background: #1d4063; }
-  .alert { color: #d9534f; font-size: 14px; margin-bottom: 15px;}
-  small { color: #888; }
+  body { font-family: monospace; padding: 20px; color: #333; font-size: 12px; }
+  .box { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; background: #f9f9f9; }
+  h3 { margin-top: 0; }
+  #debug-log { background: #eee; padding: 10px; border: 1px solid #999; height: 200px; overflow-y: scroll; }
 </style>
 </head>
 <body>
 
-<div id="contenido">
-  <h3>Cargando...</h3>
+<div class="box">
+  <h3>Estado del Puente</h3>
+  <div id="status">Esperando mensaje de Chatwoot...</div>
+</div>
+
+<div class="box">
+  <h3>Log de Eventos (Debug)</h3>
+  <div id="debug-log">Iniciando listener...<br></div>
 </div>
 
 <script>
   // --- CONFIGURACIÓN ---
-  // Tu URL de EspoCRM (sin barra al final)
-  const CRM_URL = "https://crm.altomarketing.com"; 
+  const CRM_URL = "https://crm.tuempresa.com"; 
+  const ATTRIBUTE_NAME = "id_espocrm"; // El nombre exacto del atributo
   // ---------------------
 
+  function log(msg) {
+    const logDiv = document.getElementById("debug-log");
+    logDiv.innerHTML += ">> " + msg + "<br>";
+    console.log(msg); // También lo mandamos a la consola F12
+  }
+
   window.addEventListener("message", function(event) {
-    // 1. Validar que llega data
-    if (!event.data || !event.data.data || !event.data.data.contact) {
+    log("Evento recibido. Origin: " + event.origin);
+
+    // 1. Verificamos si trae datos
+    if (!event.data) {
+      log("El evento no tiene data.");
       return;
     }
 
-    const contacto = event.data.data.contact;
-    // Aquí leemos el atributo personalizado que creaste
-    // Nota: Chatwoot a veces devuelve esto como string o number
-    const espoID = contacto.custom_attributes ? contacto.custom_attributes.id_espocrm : null;
+    // A veces el data viene como string JSON y hay que parsearlo, a veces es objeto.
+    let data = event.data;
+    if (typeof data === 'string') {
+       try { data = JSON.parse(data); } catch(e) { log("No es JSON válido"); }
+    }
+
+    // Chatwoot suele enviar muchas cosas, filtramos lo que nos importa
+    // La estructura debe ser data.data.contact o similar
+    if (!data || !data.data || !data.data.contact) {
+      log("Data recibida, pero NO contiene info de contacto (ignorado).");
+      // Imprimimos qué llegó para curiosear
+      // log("Contenido: " + JSON.stringify(data)); 
+      return;
+    }
+
+    // 2. ¡Tenemos contacto!
+    const contacto = data.data.contact;
     const email = contacto.email;
+    log("Contacto detectado: " + email);
 
-    const div = document.getElementById("contenido");
+    // 3. Buscamos el atributo personalizado
+    const customAttributes = contacto.custom_attributes || {};
+    log("Atributos encontrados: " + JSON.stringify(customAttributes));
 
-    // 2. Lógica de decisión
+    const espoID = customAttributes[ATTRIBUTE_NAME];
+    
+    const statusDiv = document.getElementById("status");
+
     if (espoID) {
-      // CASO IDEAL: ¡Tenemos ID! Redirección inmediata.
-      // Usamos replace para que no guarde historial del "puente"
+      statusDiv.innerHTML = "<strong>¡ID ENCONTRADO!</strong> ID: " + espoID + "<br>Redirigiendo...";
+      log("Redirigiendo a: " + CRM_URL + "/#Contact/view/" + espoID);
+      
+      // COMENTA ESTA LÍNEA SI QUIERES VER EL LOG SIN QUE SE VAYA LA PÁGINA
       window.location.replace(CRM_URL + "/#Contact/view/" + espoID);
       
     } else {
-      // CASO MANUAL: No hay ID vinculado todavía.
-      div.innerHTML = `
-        <div class="alert">⚠️ Este contacto no tiene ID vinculado.</div>
-        
-        <p>¿Qué quieres hacer?</p>
-        
-        <a href="${CRM_URL}/#Contact/list" target="_blank" class="btn">
-          🔍 Buscar Manualmente
-        </a>
-
-        ${email ? `
-          <a href="${CRM_URL}/#Contact/list/where%5B0%5D%5Btype%5D=equals&where%5B0%5D%5Battribute%5D=emailAddress&where%5B0%5D%5Bvalue%5D=${encodeURIComponent(email)}" target="_blank" class="btn">
-            📧 Buscar por Email: ${email}
-          </a>
-        ` : ''}
-        
-        <hr style="margin:20px 0; border:0; border-top:1px solid #eee;">
-        <small>
-          <strong>Instrucciones:</strong><br>
-          1. Busca al contacto en los botones de arriba.<br>
-          2. Copia el ID de la URL de EspoCRM (lo que está al final).<br>
-          3. Pégalo en la barra lateral de Chatwoot en "id_espocrm".
-        </small>
-      `;
+      statusDiv.innerHTML = "⚠️ Contacto sin ID vinculado (" + ATTRIBUTE_NAME + ").";
+      log("El campo " + ATTRIBUTE_NAME + " está vacío o indefinido.");
+      
+      // Generamos los botones manuales
+      let html = `<br><br>
+        <a href="${CRM_URL}/#Contact/list" target="_blank" style="background:blue;color:white;padding:5px;">Buscar Manual</a>`;
+      
+      if (email) {
+         html += ` <a href="${CRM_URL}/#Contact/list/where%5B0%5D%5Btype%5D=equals&where%5B0%5D%5Battribute%5D=emailAddress&where%5B0%5D%5Bvalue%5D=${encodeURIComponent(email)}" target="_blank" style="background:green;color:white;padding:5px;">Buscar por Email</a>`;
+      }
+      
+      statusDiv.innerHTML += html;
     }
-  });
-</script>
-
-</body>
-</html>
