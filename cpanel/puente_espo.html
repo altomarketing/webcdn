@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Conectando CRM...</title>
+<style>
+  body { font-family: sans-serif; text-align: center; padding: 30px; color: #444; }
+  .btn { 
+    display: block; margin: 10px auto; padding: 12px 20px; 
+    background: #2a5885; color: white; text-decoration: none; 
+    border-radius: 4px; font-weight: bold; width: 80%;
+  }
+  .btn:hover { background: #1d4063; }
+  .alert { color: #d9534f; font-size: 14px; margin-bottom: 15px;}
+  small { color: #888; }
+</style>
+</head>
+<body>
+
+<div id="contenido">
+  <h3>Cargando...</h3>
+</div>
+
+<script>
+  // --- CONFIGURACIÓN ---
+  // Tu URL de EspoCRM (sin barra al final)
+  const CRM_URL = "https://crm.altomarketing.com"; 
+  // ---------------------
+
+  window.addEventListener("message", function(event) {
+    // 1. Validar que llega data
+    if (!event.data || !event.data.data || !event.data.data.contact) {
+      return;
+    }
+
+    const contacto = event.data.data.contact;
+    // Aquí leemos el atributo personalizado que creaste
+    // Nota: Chatwoot a veces devuelve esto como string o number
+    const espoID = contacto.custom_attributes ? contacto.custom_attributes.id_espocrm : null;
+    const email = contacto.email;
+
+    const div = document.getElementById("contenido");
+
+    // 2. Lógica de decisión
+    if (espoID) {
+      // CASO IDEAL: ¡Tenemos ID! Redirección inmediata.
+      // Usamos replace para que no guarde historial del "puente"
+      window.location.replace(CRM_URL + "/#Contact/view/" + espoID);
+      
+    } else {
+      // CASO MANUAL: No hay ID vinculado todavía.
+      div.innerHTML = `
+        <div class="alert">⚠️ Este contacto no tiene ID vinculado.</div>
+        
+        <p>¿Qué quieres hacer?</p>
+        
+        <a href="${CRM_URL}/#Contact/list" target="_blank" class="btn">
+          🔍 Buscar Manualmente
+        </a>
+
+        ${email ? `
+          <a href="${CRM_URL}/#Contact/list/where%5B0%5D%5Btype%5D=equals&where%5B0%5D%5Battribute%5D=emailAddress&where%5B0%5D%5Bvalue%5D=${encodeURIComponent(email)}" target="_blank" class="btn">
+            📧 Buscar por Email: ${email}
+          </a>
+        ` : ''}
+        
+        <hr style="margin:20px 0; border:0; border-top:1px solid #eee;">
+        <small>
+          <strong>Instrucciones:</strong><br>
+          1. Busca al contacto en los botones de arriba.<br>
+          2. Copia el ID de la URL de EspoCRM (lo que está al final).<br>
+          3. Pégalo en la barra lateral de Chatwoot en "id_espocrm".
+        </small>
+      `;
+    }
+  });
+</script>
+
+</body>
+</html>
