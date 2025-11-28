@@ -1,0 +1,348 @@
+/* General Body and Font Styles */
+html, body {
+    margin: 0; /* Elimina cualquier margen predeterminado del html y body */
+    padding: 0; /* Elimina cualquier relleno predeterminado del html y body */
+}
+
+body {
+    background-color: #f5f5f5; /* Light gray, typical for Material Design background */
+    color: #424242; /* Darker text for readability on light background */
+    /* Ajusta el padding-top para la altura combinada del nuevo wrapper fijo */
+    padding-top: 104px; /* Default para desktop (40px de marquesina + 64px de navbar) */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto; /* Ensures footer stays at the bottom */
+    margin-top: 0; /* Asegura que no haya margen superior predeterminado */
+}
+
+* {
+    font-family: 'Roboto', sans-serif; /* Material Design often uses Roboto */
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: inherit; /* Inherit text color from body or parent */
+}
+
+/* Nuevo contenedor fijo para la marquesina y la navbar */
+.top-fixed-elements-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1002; /* Asegura que esté por encima de todo lo demás */
+    background-color: #e0e0e0; /* Color de fondo para toda la franja superior */
+}
+
+/* Navbar and Backgrounds */
+.light-blue.darken-3 { /* Example Materialize color for navbar */
+    background-color: #0288d1 !important;
+}
+
+/* Custom dark backgrounds (if still desired for specific sections) */
+.bg-oscuro {
+    background-color: #000000 !important;
+}
+
+.bg-oscuro2 {
+    background-color: #00000085 !important;
+}
+
+/* Text Shadows for Titles (adapted for Material Design aesthetic) */
+.sombra {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Softer shadow */
+    font-weight: bold;
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+.sombra2 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Softer shadow */
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+/* Fluid Player Container */
+.player-fluid-container {
+    width: 100%;
+    background-color: black; /* Establece el fondo a negro para que coincida con el reproductor */
+    margin-top: 0; /* Asegura que comience justo después del wrapper fijo */
+    height: 750px; /* Altura predeterminada para escritorio */
+}
+
+.player-fluid-container iframe {
+    display: block; /* Removes extra space below iframe */
+    width: 100%;
+    height: 100% !important; /* Aumenta la altura del iframe un 40% adicional en responsive */
+    border: none;
+}
+
+/* Section Cards (for main content blocks) */
+.section-card {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); /* Materialize shadow */
+    border-radius: 4px;
+}
+
+/* Portada Images (within cards) */
+.portada {
+    width: auto; /* Allows width to adjust based on height or parent */
+    height: 350px;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* WhatsApp Floating Button (Materialize FAB handles this now) */
+/* This specific .whatsapp rule might not be needed if redes.php handles all FABs */
+/* .whatsapp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 100px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* Card Styles (often used for content blocks) */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff0;
+    background-clip: border-box;
+    border: 0px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+/* Specific Background Colors */
+.bg-pink {
+    background-color: #e91e63 !important;
+}
+
+/* Full Background Image (if used for sections) */
+.bg-image-full {
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Marquee text styling */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #e0e0e0; /* Light background for the text */
+    padding: 10px 0;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Subtle inner shadow */
+    border-radius: 4px; /* Mantener el radio si es deseado, pero puede ser 0 para un look más "pegado" */
+}
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+    color: #424242;
+}
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/* Responsive Video Embeds */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* New: Styles for the fixed social media buttons container */
+.social-buttons-fixed-right {
+    position: fixed;
+    top: 50%; /* Centra verticalmente */
+    right: 20px; /* Margen desde la derecha */
+    transform: translateY(-50%); /* Ajuste para centrado perfecto */
+    display: flex;
+    flex-direction: column; /* Apila los botones verticalmente */
+    gap: 10px; /* Espacio entre los botones */
+    z-index: 999; /* Asegura que estén por encima del contenido principal */
+}
+
+/* Adjustments for Font Awesome icons within Materialize floating buttons */
+.btn-floating .fa {
+    line-height: 40px; /* Adjust line-height to vertically center Font Awesome icons in btn-floating */
+    font-size: 24px; /* Adjust font size for Font Awesome icons */
+}
+
+/* Adjustments for Material Icons within Materialize floating buttons */
+.btn-floating .material-icons {
+    line-height: 40px; /* Adjust line-height to vertically center Material Icons in btn-floating */
+    font-size: 24px; /* Adjust font size for Material Icons */
+}
+
+/* Responsive adjustments for mobile (Materialize breakpoints) */
+@media only screen and (max-width : 600px) { /* Materialize 'small' breakpoint */
+    body {
+        padding-top: 96px; /* 40px (marquee) + 56px (navbar móvil) */
+    }
+    .brand-logo {
+        font-size: 1.1rem; /* Reducido el tamaño de la fuente para móvil */
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+        white-space: nowrap; /* Asegura que el texto no se envuelva */
+        overflow: hidden; /* Oculta el texto que se desborda */
+        text-overflow: ellipsis; /* Añade puntos suspensivos si el texto se desborda */
+    }
+    nav .nav-wrapper {
+        justify-content: center;
+    }
+    .player-fluid-container {
+        height: 700px; /* Duplicado el tamaño del reproductor para móvil (antes 350px) */
+    }
+    /* --- INICIO DE LA MODIFICACIÓN 
+    .player-fluid-container iframe {
+        height: 120% !important; /* Aumenta la altura del iframe un 40% adicional en responsive */
+    }--- */
+    /* --- FIN DE LA MODIFICACIÓN --- */
+    .section-card {
+        margin-top: 20px;
+        padding: 15px;
+    }
+    .portada {
+        width: 100%;
+        height: auto;
+    }
+    .btn-large {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    /* Reducir el tamaño de los botones flotantes de redes sociales en móvil y centrarlos */
+    .social-buttons-fixed-right .btn-floating {
+        width: 32px;
+        height: 32px;
+        display: flex; /* Asegura que flexbox se use para el centrado */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        padding: 0; /* Elimina cualquier padding que pueda interferir */
+    }
+    .social-buttons-fixed-right .btn-floating .fa,
+    .social-buttons-fixed-right .btn-floating .material-icons {
+        font-size: 18px; /* Tamaño del icono ajustado para el nuevo tamao del botn */
+        line-height: 1; /* Resetea la altura de línea para que flexbox maneje el centrado */
+    }
+
+    .fixed-action-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+    /* La siguiente regla ha sido eliminada para que los botones se muestren en móvil */
+    /*
+    .social-buttons-fixed-right {
+        display: none;
+    }
+    */
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) { /* Materialize 'medium' breakpoint */
+    /* Tablet specific adjustments if needed */
+}
+
+/* Ensure footer copyright text is centered */
+.footer-copyright .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para asegurar que todas las tarjetas de reproductores sean iguales */
+
+/* Hacemos la fila (row) un contenedor flex para alinear sus columnas */
+.container .row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las columnas pasen a la siguiente línea si no caben */
+    /* Añade un margen negativo para que las columnas dentro del row compensen el padding */
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+/* Hacemos que cada columna (col) dentro de la fila sea un elemento flex, ocupando toda la altura disponible */
+.container .row .col.s12.m6.l3 {
+    display: flex;
+    /* Ajusta el padding para que coincida con el margen negativo del row */
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+/* Hacemos que cada tarjeta (card) sea un contenedor flex en dirección de columna para que el contenido se distribuya y el botón se alinee abajo */
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* La tarjeta ocupa el 100% de la altura de su columna flex */
+}
+
+/* Establecemos una altura fija para el contenedor de la imagen */
+.card .card-image {
+    height: 250px; /* Altura fija para el área de la imagen */
+    display: flex; /* Usamos flexbox para centrar la imagen dentro de este espacio */
+    align-items: center; /* Centra verticalmente la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+    background-color: #f8f8f8; /* Opcional: Un fondo muy claro para el área de la imagen */
+}
+
+/* Aseguramos que la imagen se adapte dentro de su contenedor fijo sin estirarse */
+.card .card-image img {
+    max-height: 100%;   /* La imagen no excederá la altura de su contenedor (250px) */
+    width: 100%;        /* La imagen no excederá el ancho de su contenedor */
+    object-fit: contain; /* Mantiene la relación de aspecto y ajusta la imagen dentro del espacio */
+    display: block;     /* Elimina cualquier espacio extra por debajo de la imagen */
+}
+
+/* Permitimos que el contenido de la tarjeta crezca y aseguramos una altura mínima para la uniformidad del texto */
+.card .card-content {
+    flex-grow: 1; /* Permite que el contenido crezca y ocupe el espacio disponible */
+    min-height: 80px; /* Ajusta esta altura mínima si tus descripciones son muy cortas o muy largas para evitar variaciones */
+    padding-bottom: 10px; /* Pequeño espacio extra antes del botón */
+}
+
+/* Empujamos el botón de acción hacia la parte inferior de la tarjeta */
+.card .card-action {
+    margin-top: auto; /* Esto empuja el card-action hacia el final del contenedor flex (la tarjeta) */
+    border-top: 1px solid rgba(160, 160, 160, 0.2); /* Borde superior estándar de Materialize */
+    padding-top: 16px; /* Padding superior estándar de Materialize */
+}
+.tapa-diario img {
+    max-height: 400px;
+    width: auto; /* Para que la imagen se ajuste proporcionalmente */
+    height: auto;
+    object-fit: contain; /* Para que la imagen no se estire y mantenga su relación de aspecto */
+}
