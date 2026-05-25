@@ -1,3 +1,1 @@
-.chat-container.open {
-    z-index: 1001;
-}
+.chat-container.open{z-index:1200}#songTitle{z-index:1001}#socialLinks{z-index:1001}#chatContainer{z-index:1500}.share-overlay{z-index:2000!important}.share-modal{z-index:2001!important}#radioImageContainer{z-index:1000!important}.sleep-timer-menu{z-index:2001!important}
