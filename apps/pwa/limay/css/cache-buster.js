@@ -1,0 +1,1 @@
+(async()=>{void 0!==window.currentAppVersion&&console.log(`App Version: ${window.currentAppVersion}`)})();
