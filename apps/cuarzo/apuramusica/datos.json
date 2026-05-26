@@ -2,7 +2,7 @@
     "radio": [
         {
             "radio_genre": "A Pura Musica",
-            "radio_url": "https://radio15.servidorderadio.net:8056",
+            "radio_url": "https://radio15.servidorderadio.net/8130/stream",
             "radio_image_url": "https://logos.suena.live/apuramusica.png",
             "background_image_url": "",
             "blur_radio_background": "true",
@@ -22,9 +22,9 @@
             "logo_url": "",
             "menulogo_url": "",
             "radio_name": "A Pura Musica",
-            "dominio_url": "https://suena.live/apuramusica",
+            "dominio_url": "https://radioapuramusica.com/",
             "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
-            "web_url": "https://suena.live/apuramusica",
+            "web_url": "https://radioapuramusica.com/",
             "whatsapp_url": "+59893476393",
             "call_url": "+59893476393",
             "tiktok_url": "https://www.tiktok.com/@walterbentancorbirriel",
