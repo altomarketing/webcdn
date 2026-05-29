@@ -1,4 +1,31 @@
 {
+    "streaming_url": "https://radio15.servidorderadio.net/8008/stream",
+    "logo_url": "https://skynetinformatica.net/serviciostreaming/apps-ios/conectadoscondios/logo.png",
+    
+    "facebook_url": "https://www.facebook.com/adventistamr",
+    "instagram_url": "https://www.instagram.com/adventistamr.cl/",
+    "whatsapp_url": "https://api.whatsapp.com/send?phone=56954476600",
+    "website_url": "https://www.conectadoscondios.cl",
+    
+    "banned_id": "ca-app-pub-3940256099942544/2934735716",
+    
+    "appstore_id": "1669140536",
+    
+    "autoplay_at_start": true,
+    
+    "notificatios_enabled": true,
+    
+    "neomorphosm_disabled": false,
+    
+    "terms_url": "",
+    "privacy_url": "https://serviciostreaming.com/privacidad.html",
+    
+    "contact_email": "radiostreaminghq@gmail.com",
+    "about_website": "https://serviciostreaming.com.ar"
+    
+}
+
+{
   "radio": [
     {
       "radio_genre": "Iglesia Adventista del 7ª Día Movimiento de Reforma Unión Chilena",
