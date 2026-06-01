@@ -1,4 +1,30 @@
 {
+
+    "streaming_url": "https://radio17.servidorderadio.net/8042/stream",
+    "logo_url": "https://logos.suena.live/pbaradio.png",
+    
+    "facebook_url": "https://www.facebook.com/",
+    "instagram_url": "https://www.instagram.com/",
+    "twitter_url": "https://twitter.com/",
+    "whatsapp_url": "https://api.whatsapp.com/send?phone=5492664933132",
+   
+    
+    "banned_id": "ca-app-pub-3940256099942544/2934735716",
+    
+    "appstore_id": "6774995673",
+    
+    "autoplay_at_start": true,
+    
+    "notificatios_enabled": true,
+    
+    "neomorphosm_disabled": false,
+    
+    "terms_url": "https://skynetinformatica.net/apps/radios/ios/labotijafm/terms.html",
+    "privacy_url": "https://skynetinformatica.net/apps/radios/ios/labotijafm/politics.html",
+    
+    "contact_email": "comercial@paneldecliente.com",
+    "about_website": "https://veni.link/wasap",
+    
     "radio": [
         {
             "radio_genre": "El sonido de tu alma",
