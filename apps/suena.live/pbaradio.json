@@ -19,8 +19,8 @@
     
     "neomorphosm_disabled": false,
     
-    "terms_url": "https://skynetinformatica.net/apps/radios/ios/labotijafm/terms.html",
-    "privacy_url": "https://skynetinformatica.net/apps/radios/ios/labotijafm/politics.html",
+    "terms_url": "https://www.radionube.online/privacidad",
+    "privacy_url": "https://www.radionube.online/privacidad",
     
     "contact_email": "comercial@paneldecliente.com",
     "about_website": "https://veni.link/wasap",
@@ -66,7 +66,7 @@
             "app_status": "1",
             "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
             "fcm_notification_topic": "your_single_radio_topic",
-            "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+            "privacy_policy_url": "https://www.radionube.online/privacidad",
             "more_apps_url": "https://serviciostreaming.com",
             "redirect_url": ""
         }
