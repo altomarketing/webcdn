@@ -1,0 +1,64 @@
+{
+  "radio": [
+    {
+      "radio_genre": "24 horas en el espacio cibernetico",
+      "radio_url": "https://radio17.servidorderadio.net/8138/stream",
+      "radio_image_url": "https://logos.suena.live/lanogaleraradiocom.png",
+      "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
+      "blur_radio_background": "true",
+      "song_metadata": "true",
+      "image_album_art": "true",
+      "image_album_art_dynamic_background": "true",
+      "auto_play": "true",
+      "chatbox_url": "https://salasdechat.altomarketing.com/"
+    }
+  ],
+  "panel": [
+    {
+      "fondo_url": "#ff0000",
+      "about_color": "#ff0000",
+      "statusBar_color": "#ff0000",
+      "navigationBar_color": "#ff0000",
+      "logo_url": "https://logos.suena.live/lanogaleraradiocom.png",
+      "menulogo_url": "",
+      "radio_name": "24 horas en el espacio cibernetico",
+      "dominio_url": "https://suena.live/lanogaleraradiocom",
+      "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
+      "web_url": "https://suena.live/lanogaleraradiocom",
+      "whatsapp_url": "+546312041888",
+      "call_url": "+546312041888",
+      "tiktok_url": "https://www.tiktok.com/@lanogaleraradio?_t=ZS-8vmrhT1TaRm&_r=1",
+      "instagram_url": "https://www.instagram.com/lanogaleraradio",
+      "twitter_url": "",
+      "facebook_url": "https://www.facebook.com/locutores.nogales?mibextid=wwXIfr&rdid=aCweQqXhKx8PBA9x&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HKq1mKseo%2F%3Fmibextid%3DwwXIfr#"
+    }
+  ],
+  "settings": [
+    {
+      "app_status": "1",
+      "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+      "fcm_notification_topic": "your_single_radio_topic",
+      "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+      "more_apps_url": "https://serviciostreaming.com",
+      "redirect_url": "https://serviciostreaming.com"
+    }
+  ],
+"COMENTARIO" : "DE ACA PARA ABAJO ES PARA LA APP IPHONE DE JSON "
+
+    "streaming_url": "https://radio17.servidorderadio.net/8138/stream",
+    "logo_url": "https://logos.suena.live/lanogaleraradiocom.png",   
+      "tiktok_url": "https://www.tiktok.com/@lanogaleraradio?_t=ZS-8vmrhT1TaRm&_r=1",
+      "instagram_url": "https://www.instagram.com/lanogaleraradio",
+      "twitter_url": "",
+      "facebook_url": "https://www.facebook.com/locutores.nogales?mibextid=wwXIfr&rdid=aCweQqXhKx8PBA9x&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HKq1mKseo%2F%3Fmibextid%3DwwXIfr#",
+    "whatsapp_url": "+546312041888",
+    "banned_id": "ca-app-pub-3940256099942544/2934735716",
+    "appstore_id": "0",
+    "autoplay_at_start": true,
+    "notificatios_enabled": true,
+    "neomorphosm_disabled": false,
+    "terms_url": "https://www.radionube.online/privacidad",
+    "privacy_url": "https://www.radionube.online/privacidad",
+    "contact_email": "comercial@paneldecliente.com",
+    "about_website": "https://veni.link/wasap"
+}
