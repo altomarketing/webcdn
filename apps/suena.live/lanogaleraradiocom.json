@@ -43,7 +43,8 @@
       "redirect_url": "https://serviciostreaming.com"
     }
   ],
-"COMENTARIO" : "DE ACA PARA ABAJO ES PARA LA APP IPHONE DE JSON "
+
+                          "COMENTARIO" : "DE ACA PARA ABAJO ES PARA LA APP IPHONE DE JSON ",
 
     "streaming_url": "https://radio17.servidorderadio.net/8138/stream",
     "logo_url": "https://logos.suena.live/lanogaleraradiocom.png",   
@@ -61,4 +62,5 @@
     "privacy_url": "https://www.radionube.online/privacidad",
     "contact_email": "comercial@paneldecliente.com",
     "about_website": "https://veni.link/wasap"
+
 }
