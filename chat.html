@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte en Vivo - Alto Marketing</title>
+    <title>Soporte en Vivo - Paneldecliente</title>
     <style>
         /* Diseño limpio y profesional */
         body {
@@ -77,12 +77,13 @@
     </script>
 
     <!-- 2. CAPTURA DE VARIABLES Y ENVÍO A CHATWOOT -->
-    <script>
+<script>
         // Leemos la URL apenas carga la página
         const urlParams = new URLSearchParams(window.location.search);
         const nombre = urlParams.get('nombre') || 'Cliente'; 
         const email = urlParams.get('email');
         const telefono = urlParams.get('telefono');
+        const mensajePredefinido = urlParams.get('mensaje'); // <-- Capturamos el mensaje
 
         // Imprimimos visualmente en el HTML
         document.getElementById('nombre-usuario').textContent = nombre;
@@ -98,12 +99,21 @@
                 });
             }
             
-            // Abre el chat automáticamente para que el cliente no tenga que hacer clic en la burbuja
+            // Abre el chat automáticamente
             setTimeout(() => {
                 window.$chatwoot.toggle("open");
+
+                // Si viaja un mensaje en la URL, lo ponemos en la caja de texto del chat
+                if (mensajePredefinido) {
+                    // Opción A: Solo escribirlo en la caja de texto (el usuario debe presionar enviar)
+                    window.$chatwoot.setText(mensajePredefinido);
+
+                    // Opción B: Si prefieres que se ENVÍE SOLO automáticamente sin que el usuario haga clic,
+                    // borra las dos barras '//' de la línea de abajo:
+                    // window.$chatwoot.sendMessage(mensajePredefinido);
+                }
             }, 500); 
         });
     </script>
-
 </body>
 </html>
