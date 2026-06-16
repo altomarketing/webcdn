@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte en Vivo - Alto Marketing</title>
+    <style>
+        /* Diseño limpio y profesional */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 { color: #1f93ff; margin-bottom: 10px; font-size: 24px; }
+        p { color: #666; font-size: 16px; line-height: 1.5; }
+        span { font-weight: bold; color: #000; }
+        .loader {
+            margin: 20px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #1f93ff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¡Hola, <span id="nombre-usuario">...</span>!</h1>
+        <p>Estamos conectándote con un asesor de <strong>Alto Marketing</strong>.</p>
+        <div class="loader"></div>
+        <p style="font-size: 13px; color: #999;">Registrado como: <span id="email-usuario">...</span></p>
+    </div>
+
+    <!-- 1. CONFIGURACIÓN Y SCRIPT DE TU CHATWOOT -->
+    <script>
+      window.chatwootSettings = {
+        "position": "right",
+        "type": "standard",
+        "launcherTitle": "",
+        "showPopoutButton": false
+      };
+
+      (function(d,t) {
+        var BASE_URL="https://chat.altomarketing.com.ar";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'yLU3kHCmDnuaHJZTJVH7Gyck',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    </script>
+
+    <!-- 2. CAPTURA DE VARIABLES Y ENVÍO A CHATWOOT -->
+    <script>
+        // Leemos la URL apenas carga la página
+        const urlParams = new URLSearchParams(window.location.search);
+        const nombre = urlParams.get('nombre') || 'Cliente'; 
+        const email = urlParams.get('email');
+        const telefono = urlParams.get('telefono');
+
+        // Imprimimos visualmente en el HTML
+        document.getElementById('nombre-usuario').textContent = nombre;
+        document.getElementById('email-usuario').textContent = email || 'Invitado';
+
+        // Cuando Chatwoot esté listo, le inyectamos los datos e iniciamos el chat
+        window.addEventListener("chatwoot:ready", function () {
+            if (email) {
+                window.$chatwoot.setUser(email, {
+                    email: email,
+                    name: nombre,
+                    phone_number: telefono ? telefono : undefined
+                });
+            }
+            
+            // Abre el chat automáticamente para que el cliente no tenga que hacer clic en la burbuja
+            setTimeout(() => {
+                window.$chatwoot.toggle("open");
+            }, 500); 
+        });
+    </script>
+
+</body>
+</html>
