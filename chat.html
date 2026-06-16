@@ -77,13 +77,14 @@
     </script>
 
     <!-- 2. CAPTURA DE VARIABLES Y ENVÍO A CHATWOOT -->
-<script>
+<!-- 2. CAPTURA DE VARIABLES Y ENVÍO A CHATWOOT -->
+    <script>
         // Leemos la URL apenas carga la página
         const urlParams = new URLSearchParams(window.location.search);
         const nombre = urlParams.get('nombre') || 'Cliente'; 
         const email = urlParams.get('email');
         const telefono = urlParams.get('telefono');
-        const mensajePredefinido = urlParams.get('mensaje'); // <-- Capturamos el mensaje
+        const mensajePredefinido = urlParams.get('mensaje'); 
 
         // Imprimimos visualmente en el HTML
         document.getElementById('nombre-usuario').textContent = nombre;
@@ -91,6 +92,7 @@
 
         // Cuando Chatwoot esté listo, le inyectamos los datos e iniciamos el chat
         window.addEventListener("chatwoot:ready", function () {
+            // 1. Enviamos todas las variables de identificación del usuario
             if (email) {
                 window.$chatwoot.setUser(email, {
                     email: email,
@@ -99,18 +101,13 @@
                 });
             }
             
-            // Abre el chat automáticamente
+            // 2. Abrimos el chat de forma automática
             setTimeout(() => {
                 window.$chatwoot.toggle("open");
 
-                // Si viaja un mensaje en la URL, lo ponemos en la caja de texto del chat
+                // 3. Enviamos el mensaje automáticamente en la conversación
                 if (mensajePredefinido) {
-                    // Opción A: Solo escribirlo en la caja de texto (el usuario debe presionar enviar)
-                    window.$chatwoot.setText(mensajePredefinido);
-
-                    // Opción B: Si prefieres que se ENVÍE SOLO automáticamente sin que el usuario haga clic,
-                    // borra las dos barras '//' de la línea de abajo:
-                    // window.$chatwoot.sendMessage(mensajePredefinido);
+                    window.$chatwoot.sendMessage(mensajePredefinido);
                 }
             }, 500); 
         });
