@@ -78,97 +78,30 @@
 
     <!-- 2. CAPTURA DE VARIABLES Y ENVÍO A CHATWOOT -->
     <script>
-        // Leemos la URL apenas carga la página
+        // 1. Leemos la URL apenas carga la página
         const urlParams = new URLSearchParams(window.location.search);
-        const nombre = urlParams.get('nombre') || 'Cliente';
+        const nombre = urlParams.get('nombre') || 'Cliente'; 
         const email = urlParams.get('email');
         const telefono = urlParams.get('telefono');
-        const mensajePredefinido = urlParams.get('mensaje');
 
-        // Imprimimos visualmente en el HTML
+        // 2. Imprimimos visualmente los datos en tu pantalla HTML
         document.getElementById('nombre-usuario').textContent = nombre;
         document.getElementById('email-usuario').textContent = email || 'Invitado';
 
-        // --- Helper: busca el textarea/contenteditable dentro del iframe de Chatwoot ---
-        function buscarCampoDeTexto() {
-            // Chatwoot puede usar distintos selectores de iframe según versión.
-            const iframe = document.querySelector('iframe.woot-widget-bubble')
-                         || document.querySelector('iframe[title="chatwoot-widget"]')
-                         || document.querySelector('.woot-widget-holder iframe')
-                         || document.querySelector('iframe[id^="chatwoot"]');
-
-            if (!iframe) return null;
-
-            let innerDoc;
-            try {
-                innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-            } catch (e) {
-                console.warn('No se pudo acceder al iframe de Chatwoot:', e);
-                return null;
-            }
-
-            // Buscamos el textarea clásico o, si usan un div editable, el contenteditable
-            return innerDoc.querySelector('textarea.input')
-                || innerDoc.querySelector('textarea')
-                || innerDoc.querySelector('[contenteditable="true"]');
-        }
-
-        // --- Helper: escribe el texto simulando un input real (para que React/Vue lo detecte) ---
-        function escribirMensaje(campo, texto) {
-            campo.focus();
-
-            if (campo.tagName.toLowerCase() === 'textarea') {
-                const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-                    window.HTMLTextAreaElement.prototype, 'value'
-                ).set;
-                nativeInputValueSetter.call(campo, texto);
-            } else {
-                // contenteditable
-                campo.textContent = texto;
-            }
-
-            campo.dispatchEvent(new Event('input', { bubbles: true }));
-            campo.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-
-        // --- Intenta escribir el mensaje, reintentando si el iframe todavía no montó el campo ---
-        function intentarEscribirMensaje(intentos) {
-            if (!mensajePredefinido) return;
-
-            const campo = buscarCampoDeTexto();
-
-            if (campo) {
-                escribirMensaje(campo, mensajePredefinido);
-                console.log('Mensaje predefinido cargado en el campo de texto.');
-                return;
-            }
-
-            if (intentos > 0) {
-                setTimeout(() => intentarEscribirMensaje(intentos - 1), 400);
-            } else {
-                console.warn('No se encontró el campo de texto del widget tras varios intentos. Puede que Chatwoot haya cambiado su estructura interna.');
-            }
-        }
-
-        // Cuando Chatwoot esté listo, le inyectamos los datos e iniciamos el chat
+        // 3. Cuando Chatwoot esté listo, mapeamos las variables exactamente como tu panel las pide
         window.addEventListener("chatwoot:ready", function () {
-            // 1. Enviamos todas las variables de identificación del usuario
             if (email) {
                 window.$chatwoot.setUser(email, {
-                    email: email,
-                    name: nombre,
-                    phone_number: telefono ? telefono : undefined
+                    emailAddress: email,       // Mapeado a tu llave 'emailAddress'
+                    fullName: nombre,          // Mapeado a tu llave 'fullName'
+                    phoneNumber: telefono ? telefono : undefined // Mapeado a tu llave 'phoneNumber'
                 });
             }
-
-            // 2. Abrimos el chat de forma automática
+            
+            // 4. Abre el chat automáticamente para el usuario
             setTimeout(() => {
                 window.$chatwoot.toggle("open");
-
-                // 3. Intentamos escribir el mensaje predefinido en el campo de texto
-                //    (reintenta hasta 10 veces, cada 400ms, por si el iframe tarda en montar el input)
-                intentarEscribirMensaje(10);
-            }, 500);
+            }, 500); 
         });
     </script>
 </body>
