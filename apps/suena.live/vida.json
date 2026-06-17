@@ -1,0 +1,64 @@
+{
+  "radio": [
+    {
+      "radio_genre": "En Él tenemos vida",
+      "radio_url": "https://radio17.servidorderadio.net/8006/stream",
+      "radio_image_url": "https://logos.suena.live/vida.png",
+      "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
+      "blur_radio_background": "true",
+      "song_metadata": "true",
+      "image_album_art": "true",
+      "image_album_art_dynamic_background": "true",
+      "auto_play": "true",
+      "chatbox_url": "https://salasdechat.altomarketing.com/"
+    }
+  ],
+  "panel": [
+    {
+      "fondo_url": "#ff0000",
+      "about_color": "#ff0000",
+      "statusBar_color": "#ff0000",
+      "navigationBar_color": "#ff0000",
+      "logo_url": "https://logos.suena.live/vida.png",
+      "menulogo_url": "",
+      "radio_name": "En Él tenemos vida",
+      "dominio_url": "https://suena.live/vida",
+      "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
+      "web_url": "https://suena.live/vida",
+      "whatsapp_url": "+542984521570",
+      "call_url": "+542984521570",
+      "tiktok_url": "https://www.tiktok.com/@allenradiovida",
+      "instagram_url": "https://www.instagram.com/FM_VIDA_ALLEN",
+      "twitter_url": "x.com/allenradiovida",
+      "facebook_url": "Facebook.com/VidaFMAllen"
+    }
+  ],
+  "settings": [
+    {
+      "app_status": "1",
+      "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+      "fcm_notification_topic": "your_single_radio_topic",
+      "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+      "more_apps_url": "https://serviciostreaming.com",
+      "redirect_url": "https://serviciostreaming.com"
+    }
+  ],
+"COMENTARIO" : "DE ACA PARA ABAJO ES PARA LA APP IPHONE DE JSON ",
+
+    "streaming_url": "https://radio17.servidorderadio.net/8006/stream",
+    "logo_url": "https://logos.suena.live/vida.png",   
+      "tiktok_url": "https://www.tiktok.com/@allenradiovida",
+      "instagram_url": "https://www.instagram.com/FM_VIDA_ALLEN",
+      "twitter_url": "x.com/allenradiovida",
+      "facebook_url": "Facebook.com/VidaFMAllen",
+    "whatsapp_url": "+542984521570",
+    "banned_id": "ca-app-pub-3940256099942544/2934735716",
+    "appstore_id": "0",
+    "autoplay_at_start": true,
+    "notificatios_enabled": true,
+    "neomorphosm_disabled": false,
+    "terms_url": "https://www.radionube.online/privacidad",
+    "privacy_url": "https://www.radionube.online/privacidad",
+    "contact_email": "comercial@paneldecliente.com",
+    "about_website": "https://veni.link/wasap"
+}
