@@ -5189,10 +5189,7 @@ html:not(.dark) #hero-brand-dark {
 
 body {
     min-height: 100vh;
-    /* asegura que cubra toda la pantalla */
-    /* background: url("assets/bg.png") no-repeat center center fixed;
-    background-size: cover; */
-    /* ajusta la imagen para cubrir todo */
+ 
 }
 
 
