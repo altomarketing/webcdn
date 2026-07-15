@@ -5113,7 +5113,7 @@ html:not(.dark) #hero-brand-dark {
 
 .video-js.video-js-stream {
 
-    background: url(assets/bg_tv.png) no-repeat center center;
+    background: url(https://cdnuploads.pages.dev/uploads/logos/radionube/tv-play.png) no-repeat center center;
     background-size: cover;
     
 }
