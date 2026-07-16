@@ -486,12 +486,6 @@ video {
   width: 100%;
 }
 
-@font-face {
-  font-family: "Akira";
-  src: url("akira.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
 body {
   font-family: var(--primary-font);
   overflow-x: hidden;
