@@ -1,3 +1,300 @@
+.modal.modal-video .modal-body {
+    overflow: hidden;
+}
+.mini-program-description {
+    display: block;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.social-item:hover {
+    color: white;
+    background: #00000024;
+}
+
+.footer {
+    padding-bottom: 100px;
+    background-color: #0B0E13;
+}
+
+.player-equalizer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #1A1A1A;
+  opacity: 0.75;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1px;
+  align-items: flex-end;
+}
+
+
+.player-stations-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    margin-bottom: 8px;
+    text-align: left;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 11px;
+    color: #fff;
+    font-family: "Akira", sans-serif;
+    background: transparent;
+    transition: background-color var(--player-duration), color var(--player-duration);
+    border: none;
+    cursor: pointer;
+}
+
+.player-stations-menu {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.5rem);
+    min-width: 14rem;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    background-color: #111;
+    box-shadow: var(--box-shadow-high);
+    opacity: 0;
+    transform: translateY(0.5rem);
+    pointer-events: none;
+    transition: opacity var(--player-duration), transform var(--player-duration);
+    max-height: 290px;
+    border: 1px solid #333333;
+}
+
+.player-stations-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Akira", sans-serif;
+    font-size: 12px;
+    border-radius: 999px;
+    color: #fff;
+    transition: background-color var(--player-duration), color var(--player-duration);
+}
+
+
+.dot-separator {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 10px;
+  background-color: #3f3f46; /* gris tipo zinc */
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.footer-text {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-text strong {
+    font-family: "Akira", sans-serif;
+    color: #fff;
+    font-size: 13px;
+}
+.footer-wrapper {
+    display: flex;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Badge API */
+.api-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    text-transform: uppercase;
+    color: #3f3f46;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 5px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+    font-family: monospace;
+}
+
+
+
+.hero-header .player-equalizer {
+    background-color: transparent;
+    z-index: 0;
+}
+
+.news-title {
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.video-js.video-js-stream {
+    background: url(assets/bg_tv.png) no-repeat center center;
+    background-size: cover;
+}
+
+/* .main-body {
+    background-color: var(--main-body-bg);
+    background-image: url("https://latinohitsradio.com/wp-content/uploads/2024/12/bg.png");
+    background-repeat: repeat;
+    background-position: center top;
+    background-size: auto;
+} */
+
+.volume-dropdown {
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    background-color: #fbfbfb;
+    transform: translate(-50%, 0);
+    box-shadow: var(--box-shadow-high);
+    transition: opacity var(--player-duration), transform var(--player-duration);
+}
+
+
+.player-equalizer {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.modal-article-title{
+
+    font-weight: 800;
+
+}
+
+.mobile-menu-list {
+    font-size: 12px;
+    font-weight: 600;
+    gap: 12px;
+}
+
+
+.player.is-static {
+    position: static;
+}
+
+.player.is-static .player-desc .artist-name {
+    background-color: #000;
+    font-weight: 800;
+    padding: 0.25rem 0.5rem;
+}
+
+.modal-content {
+    background-color: #4216F2;
+    width: 100%;
+    padding: 10px;
+    max-width: 900px;
+    border-radius: 15px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    animation: modalOpen var(--player-duration) ease;
+}
+
+.btn {
+
+    font-weight: 700;
+
+}
+
+body {
+    min-height: 100vh;
+    /* asegura que cubra toda la pantalla */
+    /* background: url("assets/bg.png") no-repeat center center fixed;
+    background-size: cover; */
+    /* ajusta la imagen para cubrir todo */
+}
+
+/* .player:not(.is-static) {
+    --container-width: 1250px;
+} */
+
+/*.install-buttons-wrapper {
+
+    background-color: #ffffff0d;
+        -webkit-backdrop-filter: blur(1rem);
+        backdrop-filter: blur(1rem);
+}
+
+.install-botton .install-button{
+    align-items: center;
+    gap: var(--button-gap, .5rem);
+    padding: var(--button-padding, .75rem);
+    text-transform: uppercase;
+    transition: transform var(--duration);
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, .25);
+    border-radius: 999px;
+    font-size: .875rem;
+    font-weight: 700;
+    display: flex;
+}
+
+.install-botton .install-button {
+    text-transform: capitalize;
+    --btn-bg: #fff;
+    --btn-color: #ffffff;
+}
+
+.install-botton .install-button:hover {
+    transform: scale(1.1);
+}
+
+/*.install-botton .install-button {
+    transition: transform 0.3s ease;
+
+}*/
+
+
+
+
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-logo-text {
+  font-family: "Akira", sans-serif;
+  font-size: 72px;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+
+.splash-top-text,
+.splash-bottom-text {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+}
+
+.splash-top-text {
+  margin-bottom: 1.5rem;
+}
+
+.splash-bottom-text {
+  margin-top: 1.5rem;
+}
+
+
 @charset "UTF-8";
 html {
   line-height: 1.5;
