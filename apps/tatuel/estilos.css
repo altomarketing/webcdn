@@ -191,7 +191,7 @@ video {
 
 @font-face {
   font-family: "Akira";
-  src: url(".https://cdn.altomarketing.com/apps/tatuel/akira.ttf") format("truetype");
+  src: url("akira.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
