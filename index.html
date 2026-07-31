@@ -1,3 +1,168 @@
-Como llegaste aqui ?
 
-ostias...
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como llegaste aqui ?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: rgba(22, 28, 38, 0.75);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-color: #5a0fc8;
+            --accent-gradient: linear-gradient(135deg, #7c3aed, #4f46e5);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(79, 70, 229, 0.15) 0px, transparent 50%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem 7rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            background: var(--accent-gradient);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .code-box {
+            background: #06080c;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.25rem;
+            text-align: left;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #38bdf8;
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .code-box .comment {
+            color: #64748b;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            border-radius: 16px;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="badge">es todo un misterio</span>
+        <h1>Como llegaste aqui</h1>
+        <p class="subtitle">
+         Esta es una web para indicar un error
+        </p>
+
+        <div class="code-box">
+            <span class="comment">&lt;!-- ahora tienes 3 opciones --&gt;</span><br>
+            & 
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🎵 Escucha musica</h3>
+                <p>Navega o haz clic en enlaces internos; la reproducción continua en segundo plano.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🖼️ Aprovecha y reporta el error</h3>
+                <p>Cada persona que reporta un error, recibe un regalo en servicio o dinero</p>
+            </div>
+            <div class="feature-card">
+                <h3>✨ Chatea con nosotros</h3>
+                <p><a html="https://veni.link/chatdirecto">Haz clic aqui e indicanos como llegaste a este error</a> </p>
+            </div>
+        </div>
+    </div>
+ 
+    <script src="https://cdn.altomarketing.com/apps/playerflotante/config.js"></script>
+    <script src="https://cdn.altomarketing.com/apps/playerflotante/js/radioplayer.js"></script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"88053cf7bf5f44d7b1aba49b0222575f","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>
