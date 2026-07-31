@@ -1,111 +1,357 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>¡Bienvenido!</title>
+    <title>Nuevo Hosting - RadioNube</title>
     <style>
- body {
-    font-family: 'Karla', sans-serif;
-background: rgb(22,54,79);
-background: linear-gradient(0deg, rgba(22,54,79,1) 0%, rgba(32,134,176,1) 35%, rgba(103,203,224,1) 100%);
-    color: #ffffff;
-    padding-bottom: 75px;
-   min-height: 100vh !important;
- }
-   @media (min-width: 768px) {
-        padding-bottom: 110px;
-    }
-.container {max-width: 1140px;
-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.navbar-brand {
-    margin-right: 0;
-}
-    img {
-        height: 21px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.navbar-dark {
-    padding-top: 35px;
-    padding-bottom: 35px;
-}
-    .navbar-text {
-        color: #ffffff;
-        opacity: 1;
-        padding: 0 20px;
-        border-right: 1px solid #ffffff;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-    }
-       
-  
-    @media (max-width: 767px) {
-        padding-bottom: 0;
-    }
+        :root {
+            --primary: #00d4ff;
+            --secondary: #0099cc;
+            --dark: #0a0e27;
+            --darker: #050810;
+            --accent: #ff006e;
+        }
 
-.page-title {
-    font-size: 80px;
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-    @media (max-width: 767px) {
-        font-size: 35px;
-        margin-bottom: 14px;  
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
 
-.page-description {
-    max-width: 465px;
-    font-size: 18px;
-    margin-bottom: 59px;
-}
-    @media (max-width: 767px) {
-        font-size: 14px;   
-    }
+        /* Fondo animado con partículas */
+        .background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
 
-p {
-    font-size: 14px;
-    margin-bottom: 21px;
-}
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+        }
 
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            top: -200px;
+            left: -200px;
+            animation: float 15s infinite ease-in-out;
+        }
 
-  @media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            bottom: -150px;
+            right: -150px;
+            animation: float 20s infinite ease-in-out reverse;
+        }
 
-  </style>
-  
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+        }
+
+        /* Contenedor principal */
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Hero section */
+        .hero {
+            max-width: 900px;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideDown 1s ease-out 0.1s both;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: #bbb;
+            margin-bottom: 40px;
+            animation: slideDown 1.2s ease-out 0.2s both;
+            font-weight: 300;
+        }
+
+        /* Tarjeta con características */
+        .features-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover .feature-icon {
+            transform: scale(1.1) rotateY(180deg);
+        }
+
+        .feature-text {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Sección CTA */
+        .cta-section {
+            margin-top: 60px;
+            animation: slideUp 1.2s ease-out 0.4s both;
+        }
+
+        .cta-text {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .cta-subtext {
+            font-size: 1rem;
+            color: #999;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Botón CTA */
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--darker);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            left: -50%;
+            top: 0;
+            transition: all 0.5s ease;
+        }
+
+        .btn-cta:hover::before {
+            left: 150%;
+            width: 100%;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 50px rgba(0, 212, 255, 0.5);
+        }
+
+        .btn-cta:active {
+            transform: translateY(-1px);
+        }
+
+        /* Animaciones */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                line-height: 1.1;
+            }
+
+            .features-card {
+                padding: 25px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .btn-cta {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Efecto de brillo en el borde */
+        .glow-border {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent,
+                rgba(0, 212, 255, 0.3),
+                transparent 30%
+            );
+            animation: spin 3s linear infinite;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .features-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
+<body>
+    <div class="background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
 
-<body class="min-vh-100 d-flex flex-column">
+    <div class="container">
+        <div class="hero">
+            <div class="logo">🚀 HOSTING CLOUDFLARE + BUNNY + LITESPEED </div>
+            <h1>Su Hosting Ya esta activo !</h1>
+            <p class="subtitle">Servidores potentes, streaming sin interrupciones, infraestructura confiable</p>
 
-    <header>
-        <div class="container">
-          
+            <div class="features-card glow-border">
+                <p style="margin-bottom: 20px; font-size: 1rem; color: #aaa;">Que incluye:</p>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-text">Ultra Rápido</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-text">100% Confiable</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🌍</div>
+                        <div class="feature-text">Global</div>
+                    </div>
+                   
+                </div>
+            </div>
         </div>
-    </header>
-    <main class="my-auto">
-        <div class="container">
-            <h1 class="page-title">¡Esto está casi listo!</h1>
-            <p class="page-description">Para finalizar el alta, por favor revise su correo electrónico con las instrucciones para su activar tu servicio. <br/> <br/>
-                      
-          </p>
-         
-             
-            <p><a style="color:#fff;font-weight:bold;" href="http://veni.link/hablemos" target="_blank">Dudas? Chatiemos</a></p>
-       
-           
+        <div class="cta-section">
+            <h2 class="cta-text">¿Te gustaría tener su propio sitio web , streaming o mas ?</h2>
+            <p class="cta-subtext">Contáctanos hoy y déjanos ayudarte a llevar tu infraestructura al siguiente nivel</p>
+            <a href="https://www.veni.link/hablemos" class="btn-cta" target="_blank">
+                💬 Iniciar Chat
+            </a>
         </div>
-    </main>
+    </div>
 </body>
-
 </html>
