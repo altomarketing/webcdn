@@ -1,22 +1,8 @@
 {
-  "start_screen": "TV", 
-
-  "stream_url": "https://video8.servidordevideo.net:3524/live/cgeqpuiylive.m3u8",
-
-  "stream_url_radio": "https://radio17.servidorderadio.net/8999/stream",
-  
-  "facebook_url": "https://www.facebook.com/radiodesvelo",
-  "tiktok_url": "https://www.tiktok.com",
-  "whatsapp_url": "https://wa.me/xxxxxxxxxxx",
-  "instagram_url": "https://www.instagram.com",
-  "youtube_url": "https://www.youtube.com",
-  "web_url": "https://www.google.com",
-
-  
   "radio": [
     {
       "radio_genre": "El Origen del Insomnio",
-      "radio_url": "https://radio22.servidorderadio.net:8458/stream",
+      "radio_url": "https://radio22.servidorderadio.net/8458/stream",
       "radio_image_url": "https://logos.suena.live/radiodesvelo.png",
       "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
       "blur_radio_background": "true",
@@ -56,5 +42,25 @@
       "more_apps_url": "https://serviciostreaming.com",
       "redirect_url": "https://serviciostreaming.com"
     }
-  ]
+  ],
+
+                          "COMENTARIO" : "DE ACA PARA ABAJO ES PARA LA APP IPHONE DE JSON ",
+
+    "streaming_url": "https://radio22.servidorderadio.net/8458/stream",
+    "logo_url": "https://logos.suena.live/radiodesvelo.png",   
+      "tiktok_url": "",
+      "instagram_url": "",
+      "twitter_url": "",
+      "facebook_url": "https://www.facebook.com/radiodesvelo",
+    "whatsapp_url": "+5493364342771",
+    "banned_id": "ca-app-pub-3940256099942544/2934735716",
+    "appstore_id": "123123123",
+    "autoplay_at_start": true,
+    "notificatios_enabled": true,
+    "neomorphosm_disabled": false,
+    "terms_url": "https://www.radionube.online/privacidad",
+    "privacy_url": "https://www.radionube.online/privacidad",
+    "contact_email": "comercial@paneldecliente.com",
+    "about_website": "https://veni.link/wasap"
+
 }
