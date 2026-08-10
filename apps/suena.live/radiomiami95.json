@@ -1,0 +1,66 @@
+{
+  "radio": [
+    {
+      "radio_genre": "Salsa para el mundo",
+      "radio_url": "https://radio15.servidorderadio.net/8060/stream",
+      "radio_video_url": "no",
+      "radio_url_api": "https://radio15.servidorderadio.net/cp/get_info.php?p=8060", 
+      "radio_image_url": "https://logos.suena.live/radiomiami95.png",
+      "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
+      "blur_radio_background": "true",
+      "song_metadata": "true",
+      "image_album_art": "true",
+      "image_album_art_dynamic_background": "true",
+      "auto_play": "true",
+      "chatbox_url": "https://salasdechat.altomarketing.com/"
+    }
+  ],
+  "panel": [
+    {
+      "fondo_url": "#ff0000",
+      "about_color": "#ff0000",
+      "statusBar_color": "#ff0000",
+      "navigationBar_color": "#ff0000",
+      "logo_url": "https://logos.suena.live/radiomiami95.png",
+      "menulogo_url": "",
+      "radio_name": "Salsa para el mundo",
+      "dominio_url": "https://suena.live/radiomiami95",
+      "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
+      "web_url": "https://suena.live/radiomiami95",
+      "whatsapp_url": "+19713405613",
+      "call_url": "+19713405613",
+      "tiktok_url": "",
+      "instagram_url": "",
+      "twitter_url": "",
+      "facebook_url": "https://www.facebook.com/profile.php?id=61557679899022"
+    }
+  ],
+  "settings": [
+    {
+      "app_status": "1",
+      "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+      "fcm_notification_topic": "your_single_radio_topic",
+      "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+      "more_apps_url": "https://serviciostreaming.com",
+      "redirect_url": "https://serviciostreaming.com"
+    }
+  ],
+"COMENTARIO" : "DE ACA PARA ABAJO ES PARA LA APP IPHONE DE JSON ",
+
+    "streaming_url": "https://radio15.servidorderadio.net/8060/stream",
+    "logo_url": "https://logos.suena.live/radiomiami95.png",   
+      "tiktok_url": "",
+      "instagram_url": "",
+      "twitter_url": "",
+      "facebook_url": "https://www.facebook.com/profile.php?id=61557679899022",
+    "whatsapp_url": "+19713405613",
+    "banned_id": "ca-app-pub-3940256099942544/2934735716",
+    "appstore_id": "0",
+    "autoplay_at_start": true,
+    "notificatios_enabled": true,
+    "neomorphosm_disabled": false,
+    "terms_url": "https://www.radionube.online/privacidad",
+    "privacy_url": "https://www.radionube.online/privacidad",
+    "contact_email": "comercial@paneldecliente.com",
+    "about_website": "https://veni.link/wasap"
+}
