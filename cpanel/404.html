@@ -147,29 +147,77 @@
             50% { transform: translateY(-30px) rotate(10deg); }
         }
 
-        /* Tarjeta con sugerencias */
-        .suggestions {
+        /* Grid de sugerencias */
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* Tarjeta individual */
+        .suggestion-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 212, 255, 0.2);
             border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 50px;
-            max-width: 500px;
+            padding: 30px 20px;
             animation: slideUp 0.8s ease-out 0.4s both;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            min-height: 220px;
         }
 
-        .suggestions h3 {
+        .suggestion-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .suggestion-card h3 {
             color: var(--primary);
             margin-bottom: 15px;
             font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
-        .suggestions p {
+        .suggestion-card p {
             color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .btn-card {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--darker);
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
             font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            align-self: flex-start;
+        }
+
+        .btn-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .btn-card:active {
+            transform: translateY(-1px);
         }
 
         /* Botón back */
@@ -291,6 +339,12 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .suggestions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -300,13 +354,14 @@
                 letter-spacing: -5px;
             }
 
-            .btn-back {
-                padding: 16px 35px;
-                font-size: 1rem;
+            .suggestions-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
-            .suggestions {
-                padding: 20px;
+            .suggestion-card {
+                min-height: auto;
+                padding: 20px 15px;
             }
 
             .floating-elements {
@@ -329,7 +384,7 @@
     </div>
 
     <div class="container">
-        <div class="floating-icon">🫩</div>
+        <div class="floating-icon">🌀</div>
         
         <div class="error-code">404</div>
         
@@ -340,18 +395,32 @@
             No te preocupes, te ayudamos a volver al camino.
         </p>
 
-        <div class="suggestions">
-            <h3>📡 Posibles motivos:</h3>
-            <p>
-                • La URL puede estar mal escrita<br>
-                • La página fue movida a otro lugar<br>
-                • El servidor tomó un descanso ☕
-            </p>
-        </div>
+        <div class="suggestions-grid">
+            <div class="suggestion-card">
+                <h3>← Volver Atrás</h3>
+                <p>Regresa a la página anterior</p>
+                <button class="btn-card" onclick="window.history.back()">
+                    Volver
+                </button>
+            </div>
 
-        <button class="btn-back" onclick="window.history.back()">
-            ← Volver Atrás
-        </button>
+            <div class="suggestion-card">
+                <h3>📡 Posibles motivos</h3>
+                <p>
+                    • La URL puede estar mal escrita<br>
+                    • La página fue movida<br>
+                    • El servidor descansa ☕
+                </p>
+            </div>
+
+            <div class="suggestion-card">
+                <h3>💬 Chatear con Operador</h3>
+                <p>¿Necesitas ayuda? Nuestro equipo está disponible</p>
+                <a href="https://www.veni.link/hablemos" class="btn-card" target="_blank">
+                    Iniciar Chat
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
