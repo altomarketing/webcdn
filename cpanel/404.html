@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página No Encontrada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #0099cc;
+            --dark: #0a0e27;
+            --darker: #050810;
+            --accent: #ff006e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+            color: #fff;
+            line-height: 1.6;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        /* Fondo animado */
+        .background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            top: -200px;
+            left: -200px;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            bottom: -150px;
+            right: -150px;
+            animation: float 20s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+        }
+
+        /* Contenedor principal */
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Número 404 con efecto */
+        .error-code {
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite, glitch 0.3s infinite 0.5s;
+            filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.5));
+            position: relative;
+            letter-spacing: -10px;
+        }
+
+        /* Efecto Glitch */
+        @keyframes glitch {
+            0%, 100% {
+                text-shadow: 
+                    2px 0 var(--accent),
+                    -2px 0 var(--primary);
+            }
+            50% {
+                text-shadow: 
+                    -2px 0 var(--accent),
+                    2px 0 var(--primary);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Descripción */
+        .error-description {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            animation: slideDown 0.8s ease-out 0.2s both;
+        }
+
+        .error-text {
+            font-size: 1.1rem;
+            color: #bbb;
+            margin-bottom: 50px;
+            max-width: 500px;
+            animation: slideDown 0.8s ease-out 0.3s both;
+            line-height: 1.8;
+        }
+
+        /* Icono flotante */
+        .floating-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+            animation: float-icon 3s ease-in-out infinite;
+        }
+
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        /* Tarjeta con sugerencias */
+        .suggestions {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 50px;
+            max-width: 500px;
+            animation: slideUp 0.8s ease-out 0.4s both;
+        }
+
+        .suggestions h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .suggestions p {
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+        /* Botón back */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--darker);
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out 0.5s both;
+        }
+
+        .btn-back::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            left: -50%;
+            top: 0;
+            transition: all 0.5s ease;
+        }
+
+        .btn-back:hover::before {
+            left: 150%;
+            width: 100%;
+        }
+
+        .btn-back:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 60px rgba(0, 212, 255, 0.6);
+        }
+
+        .btn-back:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Iconos animados alrededor */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .float-element {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.3;
+            animation: float-random 6s ease-in-out infinite;
+        }
+
+        .float-element:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .float-element:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .float-element:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .float-element:nth-child(4) {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float-random {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -20px) rotate(90deg); }
+            50% { transform: translate(0, -40px) rotate(180deg); }
+            75% { transform: translate(-20px, -20px) rotate(270deg); }
+        }
+
+        /* Animaciones */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .error-code {
+                letter-spacing: -5px;
+            }
+
+            .btn-back {
+                padding: 16px 35px;
+                font-size: 1rem;
+            }
+
+            .suggestions {
+                padding: 20px;
+            }
+
+            .floating-elements {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <div class="floating-elements">
+        <div class="float-element">🚀</div>
+        <div class="float-element">⚡</div>
+        <div class="float-element">🌌</div>
+        <div class="float-element">💫</div>
+    </div>
+
+    <div class="container">
+        <div class="floating-icon">🫩</div>
+        
+        <div class="error-code">404</div>
+        
+        <h1 class="error-description">¡Oops! Se perdió en el espacio digital</h1>
+        
+        <p class="error-text">
+            La página que buscas no existe o fue desplazada a otra dimensión. 
+            No te preocupes, te ayudamos a volver al camino.
+        </p>
+
+        <div class="suggestions">
+            <h3>📡 Posibles motivos:</h3>
+            <p>
+                • La URL puede estar mal escrita<br>
+                • La página fue movida a otro lugar<br>
+                • El servidor tomó un descanso ☕
+            </p>
+        </div>
+
+        <button class="btn-back" onclick="window.history.back()">
+            ← Volver Atrás
+        </button>
+    </div>
+</body>
+</html>
