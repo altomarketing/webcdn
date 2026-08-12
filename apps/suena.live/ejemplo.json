@@ -10,6 +10,9 @@
       "song_metadata": "true",
       "image_album_art": "true",
       "image_album_art_dynamic_background": "true",
+      "android_url": "https://play.google.com/store/apps/details?id=radionube.paneldeclientee",
+            "apple_url": "https://apps.apple.com/ar/app/radio-demo/id1641759638?see-all=developer-other-apps",
+            "donation_url": "http://paypal.com",
       "auto_play": "true",
       "chatbox_url": "https://salasdechat.altomarketing.com/"
     }
@@ -55,7 +58,7 @@
       "facebook_url": "https://www.facebook.com/streamingdeaudioyvideo",
     "whatsapp_url": "+525585266697",
     "banned_id": "ca-app-pub-3940256099942544/2934735716",
-    "appstore_id": "0",
+    "appstore_id": "123123",
     "autoplay_at_start": true,
     "notificatios_enabled": true,
     "neomorphosm_disabled": false,
