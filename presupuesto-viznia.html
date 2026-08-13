@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto Software Auditoría Interna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f8f7f3 0%, #fafaf8 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .logo-text strong {
+            font-weight: 700;
+            color: #001f3f;
+        }
+
+        .accent-gold {
+            color: #d4af37;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: #666;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #d4af37 0%, transparent 100%);
+            margin: 30px auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #001f3f 0%, #1a2f5e 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 4px;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #d4af37;
+            padding: 8px 16px;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Fases Section */
+        .phases {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #001f3f;
+            margin-bottom: 50px;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title span {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .phase-card {
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-left: 4px solid #d4af37;
+            padding: 40px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .phase-card:hover {
+            border-color: #d4af37;
+            box-shadow: 0 10px 30px rgba(0, 31, 63, 0.08);
+        }
+
+        .phase-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #d4af37 0%, #b8930f 100%);
+            color: #001f3f;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .phase-card h3 {
+            font-size: 1.3rem;
+            color: #001f3f;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .phase-card .timeline {
+            display: inline-block;
+            background: #f8f7f3;
+            color: #d4af37;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-radius: 3px;
+        }
+
+        .phase-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .deliverables {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .deliverables li {
+            color: #666;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .deliverables li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        /* Módulos Section */
+        .modules {
+            margin-bottom: 80px;
+        }
+
+        .modules-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .module-card {
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 2px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .module-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 31, 63, 0.12);
+            border-color: #d4af37;
+        }
+
+        .module-header {
+            background: linear-gradient(135deg, #001f3f 0%, #1a2f5e 100%);
+            color: white;
+            padding: 30px;
+            position: relative;
+        }
+
+        .module-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+        }
+
+        .module-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .module-header h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        .module-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .module-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .module-specs {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            border-top: 1px solid #e8e8e8;
+            gap: 15px;
+        }
+
+        .spec {
+            text-align: center;
+            flex: 1;
+        }
+
+        .spec-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #999;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .spec-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #001f3f;
+        }
+
+        .spec-value.timing {
+            color: #d4af37;
+        }
+
+        /* Stack Tecnológico */
+        .tech-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 2px;
+            margin-bottom: 80px;
+            border: 1px solid #e8e8e8;
+        }
+
+        .tech-section h3 {
+            font-size: 1.5rem;
+            color: #001f3f;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-item {
+            text-align: center;
+        }
+
+        .tech-item-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #d4af37;
+        }
+
+        .tech-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #001f3f;
+            margin-bottom: 8px;
+        }
+
+        .tech-item p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Metodología */
+        .methodology {
+            background: linear-gradient(135deg, #f8f7f3 0%, #fafaf8 100%);
+            padding: 60px 40px;
+            border-radius: 2px;
+            margin-bottom: 80px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .methodology h3 {
+            font-size: 1.5rem;
+            color: #001f3f;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .methodology-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .methodology-step {
+            background: white;
+            padding: 25px;
+            border-radius: 2px;
+            border-top: 3px solid #d4af37;
+        }
+
+        .methodology-step h4 {
+            color: #001f3f;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .methodology-step p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Resumen Presupuesto */
+        .budget-summary {
+            background: linear-gradient(135deg, #001f3f 0%, #1a2f5e 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 2px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .budget-summary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .budget-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .budget-summary h3 {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .budget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .budget-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 2px;
+        }
+
+        .budget-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .budget-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d4af37;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 2px;
+        }
+
+        .cta-section h3 {
+            color: #001f3f;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .cta-section p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #b8930f 100%);
+            color: #001f3f;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 2px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            border-top: 1px solid #e8e8e8;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .hero {
+                padding: 40px 25px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .phases-grid,
+            .modules-grid,
+            .tech-grid,
+            .methodology-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-stack {
+                flex-direction: column;
+            }
+
+            .tech-badge {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo-text"><strong>SOFTWARE</strong> de <span class="accent-gold">AUDITORÍA</span> INTERNA</div>
+            <div class="divider"></div>
+            <p class="tagline">Transformación digital de procesos de auditoría con inteligencia, seguridad y escalabilidad</p>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Arquitectura <span>Modular</span> y Escalable</h1>
+                <p>Solución personalizable que crece con tu organización. Desarrolla inicialmente la plataforma base e incorpora módulos funcionales según tus necesidades y cronograma.</p>
+                <div class="tech-stack">
+                    <div class="tech-badge">🎨 Vue 3</div>
+                    <div class="tech-badge">🗄️ Supabase</div>
+                    <div class="tech-badge">⚡ Cloudflare</div>
+                    <div class="tech-badge">🚀 Node.js</div>
+                    <div class="tech-badge">🔍 View Analytics</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fases de Desarrollo -->
+        <section class="phases">
+            <h2 class="section-title">Fases de <span>Desarrollo</span></h2>
+            
+            <div class="phases-grid">
+                <!-- Fase 1: Infraestructura -->
+                <div class="phase-card">
+                    <div class="phase-number">1</div>
+                    <h3>Infraestructura Base</h3>
+                    <div class="timeline">⏱️ 4-5 semanas</div>
+                    <p>Construcción de la plataforma core con arquitectura modular, autenticación, base de datos y dashboard ejecutivo.</p>
+                    <ul class="deliverables">
+                        <li>Sistema de autenticación y roles</li>
+                        <li>Base de datos escalable (Supabase)</li>
+                        <li>Dashboard ejecutivo core</li>
+                        <li>API REST con Node.js</li>
+                        <li>Optimización con Cloudflare CDN</li>
+                        <li>Sistema de reportes base</li>
+                    </ul>
+                </div>
+
+                <!-- Fase 2: Módulo 1 -->
+                <div class="phase-card">
+                    <div class="phase-number">2</div>
+                    <h3>Módulo 1: Plan Anual</h3>
+                    <div class="timeline">⏱️ 3-4 semanas</div>
+                    <p>Planificación y programación de auditorías basadas en riesgos, cronogramas ejecutivos y seguimiento.</p>
+                    <ul class="deliverables">
+                        <li>Planificación por riesgo</li>
+                        <li>Cronograma interactivo</li>
+                        <li>Asignación de recursos</li>
+                        <li>Dashboard KPIs</li>
+                        <li>Reportes automáticos</li>
+                    </ul>
+                </div>
+
+                <!-- Fase 3: Módulos Adicionales -->
+                <div class="phase-card">
+                    <div class="phase-number">3+</div>
+                    <h3>Módulos Posteriores</h3>
+                    <div class="timeline">⏱️ 2-3 semanas c/u</div>
+                    <p>Incorporación paralela de módulos especializados según prioridades del negocio.</p>
+                    <ul class="deliverables">
+                        <li>Auditoría de Compras</li>
+                        <li>Auditoría de Inventarios</li>
+                        <li>Tesorería y Bancos</li>
+                        <li>Gastos Operativos</li>
+                        <li>Y más módulos...</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulos Disponibles -->
+        <section class="modules">
+            <h2 class="section-title">Módulos <span>Funcionales</span></h2>
+            <p class="modules-intro">Cada módulo es independiente y puede ser desarrollado, desplegado y mantenido por separado, permitiendo flexibilidad en el cronograma y recursos.</p>
+
+            <div class="modules-grid">
+                <!-- Módulo: Plan Anual -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">📋</div>
+                        <h4>Plan Anual de Auditoría</h4>
+                    </div>
+                    <div class="module-content">
+                        <p class="module-desc">Planificación estratégica, clasificación de riesgos, cronograma y asignación de recursos de auditoría.</p>
+                        <div class="module-specs">
+                            <div class="spec">
+                                <div class="spec-label">Timeline</div>
+                                <div class="spec-value timing">2-3 sem</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-label">Complejidad</div>
+                                <div class="spec-value">Media</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo: Auditoría de Compras -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">🛒</div>
+                        <h4>Auditoría de Compras</h4>
+                    </div>
+                    <div class="module-content">
+                        <p class="module-desc">Evaluación de procesos, proveedores, cotizaciones, órdenes de compra y cumplimiento normativo.</p>
+                        <div class="module-specs">
+                            <div class="spec">
+                                <div class="spec-label">Timeline</div>
+                                <div class="spec-value timing">2-3 sem</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-label">Complejidad</div>
+                                <div class="spec-value">Media</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo: Gastos Operativos -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">💰</div>
+                        <h4>Gastos Operativos</h4>
+                    </div>
+                    <div class="module-content">
+                        <p class="module-desc">Control, análisis y optimización de gastos operativos con detección de tendencias y fraudes.</p>
+                        <div class="module-specs">
+                            <div class="spec">
+                                <div class="spec-label">Timeline</div>
+                                <div class="spec-value timing">2-3 sem</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-label">Complejidad</div>
+                                <div class="spec-value">Media</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo: Inventarios -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">📦</div>
+                        <h4>Auditoría de Inventarios</h4>
+                    </div>
+                    <div class="module-content">
+                        <p class="module-desc">Control físico de existencias, valuación, riesgos y análisis de variaciones con precisión.</p>
+                        <div class="module-specs">
+                            <div class="spec">
+                                <div class="spec-label">Timeline</div>
+                                <div class="spec-value timing">3-4 sem</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-label">Complejidad</div>
+                                <div class="spec-value">Alta</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo: Tesorería -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">🏦</div>
+                        <h4>Tesorería y Bancos</h4>
+                    </div>
+                    <div class="module-content">
+                        <p class="module-desc">Conciliaciones bancarias, control de efectivo, análisis de flujo y gestión de riesgos financieros.</p>
+                        <div class="module-specs">
+                            <div class="spec">
+                                <div class="spec-label">Timeline</div>
+                                <div class="spec-value timing">3-4 sem</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-label">Complejidad</div>
+                                <div class="spec-value">Alta</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo: Gastos Personal -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">👥</div>
+                        <h4>Gastos de Personal</h4>
+                    </div>
+                    <div class="module-content">
+                        <p class="module-desc">Auditoría de nóminas, beneficios, horas extras, segregación de funciones y cumplimiento laboral.</p>
+                        <div class="module-specs">
+                            <div class="spec">
+                                <div class="spec-label">Timeline</div>
+                                <div class="spec-value timing">2-3 sem</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-label">Complejidad</div>
+                                <div class="spec-value">Media</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo: Activos Fijos -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">🏭</div>
+                        <h4>Auditoría de Activos Fijos</h4>
+                    </div>
+                    <div class="module-content">
+                        <p class="module-desc">Valuación, depreciación, físico, registro de activos y cumplimiento de políticas de control.</p>
+                        <div class="module-specs">
+                            <div class="spec">
+                                <div class="spec-label">Timeline</div>
+                                <div class="spec-value timing">2-3 sem</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-label">Complejidad</div>
+                                <div class="spec-value">Media</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo: Ingresos -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">💵</div>
+                        <h4>Ingresos y Cuentas</h4>
+                    </div>
+                    <div class="module-content">
+                        <p class="module-desc">Control de ingresos, conciliaciones, depósitos y seguimiento de cuentas por cobrar.</p>
+                        <div class="module-specs">
+                            <div class="spec">
+                                <div class="spec-label">Timeline</div>
+                                <div class="spec-value timing">2-3 sem</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-label">Complejidad</div>
+                                <div class="spec-value">Media</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo: Resumen Ejecutivo -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon">📊</div>
+                        <h4>Resumen Ejecutivo</h4>
+                    </div>
+                    <div class="module-content">
+                        <p class="module-desc">Dashboard integral, KPIs consolidados, reportes ejecutivos y análisis de tendencias.</p>
+                        <div class="module-specs">
+                            <div class="spec">
+                                <div class="spec-label">Timeline</div>
+                                <div class="spec-value timing">2-3 sem</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-label">Complejidad</div>
+                                <div class="spec-value">Media</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack Tecnológico -->
+        <section class="tech-section">
+            <h3>Stack Tecnológico</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-item-icon">🎨</div>
+                    <h4>Frontend</h4>
+                    <p><strong>Vue 3</strong> con composables, Vite para build optimizado y componentización modular.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-icon">🗄️</div>
+                    <h4>Base de Datos</h4>
+                    <p><strong>Supabase</strong> (PostgreSQL) con Row Level Security, escalado automático y backups.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-icon">⚡</div>
+                    <h4>CDN & Edge</h4>
+                    <p><strong>Cloudflare Workers</strong> para edge computing, caching inteligente y seguridad.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-icon">🚀</div>
+                    <h4>Backend</h4>
+                    <p><strong>Node.js</strong> con Express, autoscaling automático y API REST documentada.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-icon">📈</div>
+                    <h4>Analytics</h4>
+                    <p><strong>View Analytics</strong> para tracking de usuario, comportamiento y KPIs en tiempo real.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-icon">🔒</div>
+                    <h4>Seguridad</h4>
+                    <p>OAuth 2.0, JWT, cifrado de datos, HTTPS enforced y cumplimiento de normas internacionales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodología de Implementación -->
+        <section class="methodology">
+            <h3>Metodología de Implementación</h3>
+            <div class="methodology-steps">
+                <div class="methodology-step">
+                    <h4>1. Diseño Arquitectónico</h4>
+                    <p>Análisis de requisitos, diseño de base de datos modular y definición de interfaces API.</p>
+                </div>
+                <div class="methodology-step">
+                    <h4>2. Desarrollo Iterativo</h4>
+                    <p>Sprints de 2-3 semanas con entregas incrementales, testing continuo y feedback inmediato.</p>
+                </div>
+                <div class="methodology-step">
+                    <h4>3. Integración Continua</h4>
+                    <p>CI/CD con testing automático, despliegues en staging y validación con clientes.</p>
+                </div>
+                <div class="methodology-step">
+                    <h4>4. Capacitación</h4>
+                    <p>Documentación, tutoriales en video, talleres y soporte técnico durante transición.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resumen Presupuesto -->
+        <section class="budget-summary">
+            <div class="budget-content">
+                <h3>Propuesta de Presupuesto</h3>
+                <div class="budget-grid">
+                    <div class="budget-item">
+                        <div class="budget-label">Fase 1 (Base)</div>
+                        <div class="budget-value">USD $ 4K</div>
+                    </div>
+                    <div class="budget-item">
+                        <div class="budget-label">Por Módulo</div>
+                        <div class="budget-value">USD $ 700</div>
+                    </div>
+                    <div class="budget-item">
+                        <div class="budget-label">4 Módulos</div>
+                        <div class="budget-value">USD $ 3k</div>
+                    </div>
+                    <div class="budget-item">
+                        <div class="budget-label">Inversión Total*</div>
+                        <div class="budget-value">USD depende de modulos</div>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; opacity: 0.8; font-size: 0.9rem;">
+                    * Para base + 4 módulos iniciales. Presupuesto personalizable según cantidad y complejidad de módulos.
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h3>¿Listo para transformar tu auditoría?</h3>
+            <p>Contáctanos para una propuesta personalizada basada en tu cronograma y prioridades específicas.</p>
+            <button class="cta-button">Solicitar Propuesta Detallada</button>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Software de Auditoría Interna • Solución Modular • 100% Personalizable</p>
+            <p style="margin-top: 15px; font-size: 0.85rem;">Diseñado para empresas de USA y Latinoamérica • Cumplimiento IIA, COSO e ISO 31000</p>
+        </footer>
+    </div>
+</body>
+</html>
