@@ -42,9 +42,9 @@
       "app_status": "1",
       "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
       "fcm_notification_topic": "your_single_radio_topic",
-      "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
-      "more_apps_url": "https://serviciostreaming.com",
-      "redirect_url": "https://serviciostreaming.com"
+      "privacy_policy_url": "https://www.radionube.online/personal-data-and-general-privacy-agreement",
+      "more_apps_url": "https://radionube.online",
+      "redirect_url": "https://radionube.online"
     }
   ],
 
