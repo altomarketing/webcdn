@@ -1,51 +1,70 @@
 {
-    "radio": [
-        {
-            "radio_genre": "viva cristo rey",
-            "radio_url": "https://radio13.servidorderadio.net/8074/stream",
-            "radio_video_url": "no",
-      "radio_url_api": "https://radioradio13.servidorderadio.net/cp/get_info.php?p=8074", 
-            "radio_image_url": "https://logos.suena.live/731cristovive.png",
-            "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
-            "blur_radio_background": "true",
-            "song_metadata": "true",
-            "image_album_art": "true",
-            "image_album_art_dynamic_background": "true",
-            "auto_play": "true",
-            "android_url": "",
-            "apple_url": "",
-            "donation_url": "",
-            "chatbox_url": "https://salasdechat.altomarketing.com/"
-        }
-    ],
-    "panel": [
-        {
-            "fondo_url": "#ff0000",
-            "about_color": "#ff0000",
-            "statusBar_color": "#ff0000",
-            "navigationBar_color": "#ff0000",
-            "logo_url": "",
-            "menulogo_url": "",
-            "radio_name": "viva cristo rey",
-            "dominio_url": "https://suena.live/731cristovive",
-            "copyright_url": "Copyright © Radio Nube - Todo los derechos Reservados.",
-            "web_url": "https://suena.live/731cristovive",
-            "whatsapp_url": "+17314373997",
-            "call_url": "+17314373997",
-            "tiktok_url": "",
-            "instagram_url": "",
-            "twitter_url": "",
-            "facebook_url": ""
-        }
-    ],
-    "settings": [
-        {
-            "app_status": "1",
-            "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
-            "fcm_notification_topic": "your_single_radio_topic",
-            "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
-            "more_apps_url": "https://serviciostreaming.com",
-            "redirect_url": ""
-        }
-    ]
+  "radio": [
+    {
+      "radio_genre": "viva cristo rey",
+      "radio_url": "https://radio13.servidorderadio.net/8074/stream", 
+      "radio_video_url": "",
+      "radio_url_api": "https://radio13.servidorderadio.net/cp/get_info.php?p=8074", 
+      "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
+      "blur_radio_background": "true",
+      "song_metadata": "true",
+      "image_album_art": "true",
+      "image_album_art_dynamic_background": "true",
+      "android_url": "no",
+            "apple_url": "no",
+            "donation_url": "No",
+      "auto_play": "true",
+      "chatbox_url": "https://salasdechat.altomarketing.com/"
+    }
+  ],
+  "panel": [
+    {
+      "fondo_url": "#ff0000",
+      "about_color": "#ff0000",
+      "statusBar_color": "#ff0000",
+      "navigationBar_color": "#ff0000",
+      "logo_url": "https://logos.suena.live/731cristovive.png",
+      "menulogo_url": "",
+      "radio_name": "viva cristo rey",
+      "dominio_url": "https://suena.live/731cristovive",
+      "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
+      "web_url": "https://suena.live/731cristovive",
+      "whatsapp_url": "+17314373997",
+      "call_url": "+17314373997",
+      "tiktok_url": "",
+      "instagram_url": "",
+      "twitter_url": "",
+      "facebook_url": "no tengo por ahora"
+    }
+  ],
+  "settings": [
+    {
+      "app_status": "1",
+      "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+      "fcm_notification_topic": "your_single_radio_topic",
+      "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+      "more_apps_url": "https://serviciostreaming.com",
+      "redirect_url": "https://serviciostreaming.com"
+    }
+  ],
+
+                          "COMENTARIO" : "DE ACA PARA ABAJO ES PARA LA APP IPHONE DE JSON ",
+
+    "streaming_url": "https://radio13.servidorderadio.net/8074/stream",
+    "logo_url": "https://logos.suena.live/731cristovive.png",   
+      "tiktok_url": "",
+      "instagram_url": "",
+      "twitter_url": "",
+      "facebook_url": "no tengo por ahora",
+    "whatsapp_url": "+17314373997",
+    "banned_id": "ca-app-pub-3940256099942544/2934735716",
+    "appstore_id": "123",
+    "autoplay_at_start": true,
+    "notificatios_enabled": true,
+    "neomorphosm_disabled": false,
+   "terms_url": "https://radionube.online/service-and-use-agreement",
+    "privacy_url": "https://www.radionube.online/personal-data-and-general-privacy-agreement",
+    "contact_email": "comercial@paneldecliente.com",
+    "about_website": "https://veni.link/wasap"
+
 }
