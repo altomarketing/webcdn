@@ -1,0 +1,69 @@
+{
+  "radio": [
+    {
+      "radio_genre": "La manera perfecta de escuchar tu música favorita",
+      "radio_url": "https://radio22.servidorderadio.net/8110/stream",
+      "radio_video_url": "no",
+      "radio_url_api": "https://radio22.servidorderadio.net/cp/get_info.php?p=8110", 
+      "radio_image_url": "https://logos.suena.live/radiomando.png",
+      "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
+      "blur_radio_background": "true",
+      "song_metadata": "true",
+      "image_album_art": "true",
+      "image_album_art_dynamic_background": "true",
+         "android_url": "finalizada",
+            "apple_url": "https://apps.apple.com/ar/app/radio-mando/id6450747134",
+            "donation_url": "No",
+      "auto_play": "true",
+      "chatbox_url": "https://salasdechat.altomarketing.com/"
+    }
+  ],
+  "panel": [
+    {
+      "fondo_url": "#ff0000",
+      "about_color": "#ff0000",
+      "statusBar_color": "#ff0000",
+      "navigationBar_color": "#ff0000",
+      "logo_url": "https://logos.suena.live/radiomando.png",
+      "menulogo_url": "",
+      "radio_name": "La manera perfecta de escuchar tu música favorita",
+      "dominio_url": "https://suena.live/radiomando",
+      "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
+      "web_url": "https://suena.live/radiomando",
+      "whatsapp_url": "+17606266344",
+      "call_url": "+17606266344",
+      "tiktok_url": "https://www.tiktok.com/@radio_mando",
+      "instagram_url": "https://www.instagram.com/radio_mando",
+      "twitter_url": "https://x.com/RadioMandoo",
+      "facebook_url": "https://www.facebook.com/radiomandoo"
+    }
+  ],
+  "settings": [
+    {
+      "app_status": "1",
+      "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+      "fcm_notification_topic": "your_single_radio_topic",
+      "privacy_policy_url": "https://serviciostreaming.com/privacidad.html",
+      "more_apps_url": "https://serviciostreaming.com",
+      "redirect_url": "https://serviciostreaming.com"
+    }
+  ],
+"COMENTARIO" : "DE ACA PARA ABAJO ES PARA LA APP IPHONE DE JSON ",
+
+    "streaming_url": "https://radio22.servidorderadio.net/8110/stream",
+    "logo_url": "https://logos.suena.live/radiomando.png",   
+      "tiktok_url": "https://www.tiktok.com/@radio_mando",
+      "instagram_url": "https://www.instagram.com/radio_mando",
+      "twitter_url": "https://x.com/RadioMandoo",
+      "facebook_url": "https://www.facebook.com/radiomandoo",
+    "whatsapp_url": "+17606266344",
+    "banned_id": "ca-app-pub-3940256099942544/2934735716",
+    "appstore_id": "123123",
+    "autoplay_at_start": true,
+    "notificatios_enabled": true,
+    "neomorphosm_disabled": false,
+    "terms_url": "https://radionube.online/service-and-use-agreement",
+    "privacy_url": "https://www.radionube.online/personal-data-and-general-privacy-agreement",
+    "contact_email": "comercial@paneldecliente.com",
+    "about_website": "https://veni.link/wasap"
+}
