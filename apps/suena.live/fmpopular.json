@@ -1,0 +1,69 @@
+{
+  "radio": [
+    {
+      "radio_genre": "Escuchanos en vivo desde donde estés, las 24 hs. los 365 días del año. Estamos donde vos estas",
+      "radio_url": "https://radio16.servidorderadio.net/8282/stream",
+      "radio_video_url": "no",
+      "radio_url_api": "https://radio16.servidorderadio.net/cp/get_info.php?p=8282", 
+      "radio_image_url": "https://logos.suena.live/fmpopular.png",
+      "background_image_url": "https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp",
+      "blur_radio_background": "true",
+      "song_metadata": "true",
+      "image_album_art": "true",
+      "image_album_art_dynamic_background": "true",
+         "android_url": "finalizada",
+            "apple_url": "link",
+            "donation_url": "No",
+      "auto_play": "true",
+      "chatbox_url": "https://salasdechat.altomarketing.com/"
+    }
+  ],
+  "panel": [
+    {
+      "fondo_url": "#ff0000",
+      "about_color": "#ff0000",
+      "statusBar_color": "#ff0000",
+      "navigationBar_color": "#ff0000",
+      "logo_url": "https://logos.suena.live/fmpopular.png",
+      "menulogo_url": "",
+      "radio_name": "Escuchanos en vivo desde donde estés, las 24 hs. los 365 días del año. Estamos donde vos estas",
+      "dominio_url": "https://suena.live/fmpopular",
+      "copyright_url": "Copyright © RadioNube.online - Todo los derechos Reservados.",
+      "web_url": "https://suena.live/fmpopular",
+      "whatsapp_url": "+5493856404503",
+      "call_url": "+5493856404503",
+      "tiktok_url": "",
+      "instagram_url": "",
+      "twitter_url": "",
+      "facebook_url": "https://www.facebook.com/marcelo.pineda.5249"
+    }
+  ],
+  "settings": [
+    {
+      "app_status": "1",
+      "onesignal_app_id": "00000000-0000-0000-0000-000000000000",
+      "fcm_notification_topic": "your_single_radio_topic",
+      "privacy_policy_url": "https://www.radionube.online/personal-data-and-general-privacy-agreement",
+      "more_apps_url": "https://radionube.online",
+      "redirect_url": "https://radionube.online"
+    }
+  ],
+"COMENTARIO" : "DE ACA PARA ABAJO ES PARA LA APP IPHONE DE JSON ",
+
+    "streaming_url": "https://radio16.servidorderadio.net/8282/stream",
+    "logo_url": "https://logos.suena.live/fmpopular.png",   
+      "tiktok_url": "",
+      "instagram_url": "",
+      "twitter_url": "",
+      "facebook_url": "https://www.facebook.com/marcelo.pineda.5249",
+    "whatsapp_url": "+5493856404503",
+    "banned_id": "ca-app-pub-3940256099942544/2934735716",
+    "appstore_id": "123",
+    "autoplay_at_start": true,
+    "notificatios_enabled": true,
+    "neomorphosm_disabled": false,
+    "terms_url": "https://radionube.online/service-and-use-agreement",
+    "privacy_url": "https://www.radionube.online/personal-data-and-general-privacy-agreement",
+    "contact_email": "comercial@paneldecliente.com",
+    "about_website": "https://veni.link/wasap"
+}
