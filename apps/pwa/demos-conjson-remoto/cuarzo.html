@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Radio App Preview - Cuarzo Theme</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #0d0606;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 0;
+        }
+
+        /* Smartphone Mockup Container for Desktop & Native Mobile Responsive */
+        .device-container {
+            width: 100%;
+            max-width: 430px;
+            height: 100vh;
+            max-height: 932px;
+            position: relative;
+            background-color: #120505;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(220, 38, 38, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 480px) {
+            .device-container {
+                height: 880px;
+                border-radius: 40px;
+                border: 8px solid #241313;
+                margin: 20px 0;
+            }
+        }
+
+        /* Mixing Console Background Image (Right side reveal) */
+        .console-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://cdnuploads.pages.dev/uploads/images/fondos/fondo.webp');
+            background-size: cover;
+            background-position: right center;
+            opacity: 0.85;
+            z-index: 1;
+        }
+
+        /* Curved Red / Orange Gradient Overlay (Left side) */
+        .curved-gradient-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .curved-gradient-overlay svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Top Menu Header Bar */
+        .top-header {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            padding: 16px 20px 8px;
+        }
+
+        .menu-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .menu-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 26px;
+        }
+
+        .menu-icon span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 2px;
+        }
+
+        .menu-text {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        /* Main Content Container */
+        .main-content {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 20px 40px;
+            text-align: center;
+        }
+
+        /* Upper Section with Logo and Visualizer */
+        .logo-section {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        /* Background Horizontal Equalizer Waveform */
+        .waveform-bg {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            opacity: 0.35;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .w-bar {
+            width: 3px;
+            height: 20%;
+            background-color: #ffffff;
+            border-radius: 3px;
+            transition: height 0.15s ease;
+        }
+
+        .waveform-bg.playing .w-bar {
+            animation: waveBounce 1s infinite ease-in-out alternate;
+        }
+
+        .waveform-bg.playing .w-bar:nth-child(2n) { animation-delay: 0.15s; }
+        .waveform-bg.playing .w-bar:nth-child(3n) { animation-delay: 0.3s; }
+        .waveform-bg.playing .w-bar:nth-child(5n) { animation-delay: 0.45s; }
+
+        @keyframes waveBounce {
+            0% { height: 15%; }
+            50% { height: 95%; }
+            100% { height: 30%; }
+        }
+
+        /* Central Rotating Logo Outer Container */
+        .logo-wrapper {
+            position: relative;
+            z-index: 5;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            padding: 4px;
+            background: #ffffff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(234, 56, 77, 0.5);
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Continuous Rotating Logo Animation */
+        .main-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            animation: spin 20s linear infinite;
+            transition: animation-play-state 0.3s ease;
+        }
+
+        .main-logo.paused {
+            animation-play-state: paused;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Sonando en Vivo Capsule Badge */
+        .live-badge {
+            position: relative;
+            z-index: 5;
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 6px 18px;
+            border-radius: 20px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        /* Central Big Play / Pause Button */
+        .player-center {
+            position: relative;
+            z-index: 10;
+            margin: 10px 0 20px;
+        }
+
+        .play-btn-outer {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            padding: 6px;
+            border: 3px dashed rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: rotateDashed 30s linear infinite;
+        }
+
+        @keyframes rotateDashed {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .play-btn {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #ff3b4e, #c70014);
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            cursor: pointer;
+            outline: none;
+            box-shadow: inset 0 -4px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        .play-btn:active {
+            transform: scale(0.92);
+        }
+
+        /* Right Floating Social Buttons Bar */
+        .social-column {
+            position: absolute;
+            right: 14px;
+            top: 52%;
+            transform: translateY(-50%);
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .social-btn:active {
+            transform: scale(0.9);
+        }
+
+        .social-btn.whatsapp { background-color: #25D366; }
+        .social-btn.web { background-color: #00A0E9; }
+        .social-btn.call { background-color: #E91E63; }
+        .social-btn.facebook { background-color: #1877F2; }
+        .social-btn.tiktok { background-color: #000000; }
+
+        /* Bottom Radio Information Text */
+        .bottom-info {
+            position: relative;
+            z-index: 10;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .radio-title {
+            font-size: 26px;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .radio-subtitle {
+            font-size: 15px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Android Home Indicator Bar */
+        .android-bar {
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
+            z-index: 30;
+        }
+
+        /* Loader Overlay */
+        .loader-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(18, 5, 5, 0.94);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            transition: opacity 0.4s ease;
+        }
+
+        .spinner {
+            width: 42px;
+            height: 42px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #ff3b4e;
+            border-radius: 50%;
+            animation: spinSpinner 0.8s linear infinite;
+        }
+
+        @keyframes spinSpinner {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Device Container -->
+    <div class="device-container">
+
+        <!-- Loading Overlay -->
+        <div id="loaderOverlay" class="loader-overlay">
+            <div class="spinner"></div>
+            <p style="font-size: 14px; font-weight: 600; color: #ffffff;">Cargando datos de la radio...</p>
+        </div>
+
+        <!-- Right Side Console Image Background -->
+        <div id="customBgLayer" class="console-bg"></div>
+
+        <!-- Curved Gradient Overlay separating left and right -->
+        <div class="curved-gradient-overlay">
+            <svg viewBox="0 0 430 932" preserveAspectRatio="none" fill="none">
+                <defs>
+                    <linearGradient id="cuarzoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#c41026" />
+                        <stop offset="45%" stop-color="#e82c40" />
+                        <stop offset="75%" stop-color="#f05623" />
+                        <stop offset="100%" stop-color="#e65100" />
+                    </linearGradient>
+                </defs>
+                <path d="M 0 0 L 430 0 C 300 250 360 650 430 932 L 0 932 Z" fill="url(#cuarzoGrad)" />
+            </svg>
+        </div>
+
+        <!-- Top Header Navigation (Hamburger Menu) -->
+        <div class="top-header">
+            <button class="menu-btn" title="Menú">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="menu-text">MENU</span>
+            </button>
+        </div>
+
+        <!-- Main Screen Area -->
+        <div class="main-content">
+
+            <!-- Logo Section & Horizontal Waveform -->
+            <div class="logo-section">
+                <!-- Background Waveform Equalizer -->
+                <div id="waveform" class="waveform-bg">
+                    <div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div>
+                    <div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div>
+                    <div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div>
+                    <div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div>
+                    <div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div><div class="w-bar"></div>
+                </div>
+
+                <!-- Central Rotating Logo -->
+                <div class="logo-wrapper">
+                    <img id="mainLogo" class="main-logo" src="https://logos.suena.live/radiocoap.png" alt="Radio Logo">
+                </div>
+
+                <!-- Live Capsule Badge -->
+                <div class="live-badge">
+                    SONANDO EN VIVO
+                </div>
+            </div>
+
+            <!-- Central Big Play / Pause Button -->
+            <div class="player-center">
+                <div class="play-btn-outer">
+                    <button id="playPauseBtn" class="play-btn" title="Reproducir / Pausar">
+                        <!-- Play Icon -->
+                        <svg id="playIcon" viewBox="0 0 24 24" width="46" height="46" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                        <!-- Pause Icon -->
+                        <svg id="pauseIcon" viewBox="0 0 24 24" width="46" height="46" fill="white" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Floating Social Buttons Column -->
+            <div class="social-column">
+                <a id="whatsappBtn" class="social-btn whatsapp" title="WhatsApp">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                </a>
+                <a id="webBtn" class="social-btn web" title="Página Web">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                </a>
+                <a id="callBtn" class="social-btn call" title="Llamar">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </a>
+                <a id="facebookBtn" class="social-btn facebook" title="Facebook">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a id="tiktokBtn" class="social-btn tiktok" title="TikTok">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01v8.26c0 1.17-.22 2.37-.77 3.4-1.12 2.1-3.4 3.43-5.77 3.39-2.58.05-5.06-1.32-6.24-3.6-1.18-2.29-.86-5.11.77-7.06 1.6-1.93 4.23-2.65 6.64-1.78v4.11c-.96-.46-2.12-.39-3.01.21-.89.6-1.36 1.67-1.18 2.72.18 1.05.99 1.88 2.05 2.05 1.06.17 2.13-.3 2.73-1.19.4-.59.57-1.32.56-2.03V.02z"/></svg>
+                </a>
+            </div>
+
+            <!-- Bottom Radio Information -->
+            <div class="bottom-info">
+                <h1 id="radioTitle" class="radio-title">RADIO COAP</h1>
+                <p id="radioGenre" class="radio-subtitle">EN VIVO | 24 HS.</p>
+            </div>
+
+        </div>
+
+        <!-- Android Gesture Bar -->
+        <div class="android-bar"></div>
+
+    </div>
+
+    <!-- Hidden Audio Stream -->
+    <audio id="audioPlayer" crossorigin="anonymous"></audio>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        let audioStreamUrl = "";
+        let isPlaying = false;
+
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playIcon = document.getElementById('playIcon');
+        const pauseIcon = document.getElementById('pauseIcon');
+        const mainLogo = document.getElementById('mainLogo');
+        const waveform = document.getElementById('waveform');
+        const loaderOverlay = document.getElementById('loaderOverlay');
+
+        // Extract Radio Variable / URL from query parameters or anchor
+        function getRadioConfig() {
+            const params = new URLSearchParams(window.location.search);
+            
+            let rawVar = params.get('variable') || params.get('v') || params.get('json') || params.get('radio') || params.get('id');
+
+            if (!rawVar && window.location.hash) {
+                rawVar = window.location.hash.replace('#', '').trim();
+            }
+
+            if (!rawVar) {
+                rawVar = 'radiocoap';
+            }
+
+            if (rawVar.startsWith('http://') || rawVar.startsWith('https://')) {
+                return {
+                    variableName: rawVar.split('/').pop().replace(/\.json$/i, ''),
+                    jsonUrl: rawVar
+                };
+            }
+
+            const cleanVar = rawVar.replace(/\.json$/i, '');
+            return {
+                variableName: cleanVar,
+                jsonUrl: `https://cdn.altomarketing.com/apps/suena.live/${cleanVar}.json`
+            };
+        }
+
+        // WhatsApp number formatting helper
+        function formatWhatsappUrl(phone) {
+            if (!phone || phone.trim() === "") return "";
+            let cleanPhone = phone.replace(/[^\d+]/g, '');
+            if (cleanPhone.startsWith('+')) cleanPhone = cleanPhone.substring(1);
+            return `https://wa.me/${cleanPhone}`;
+        }
+
+        // Phone call link helper
+        function formatCallUrl(phone) {
+            if (!phone || phone.trim() === "") return "";
+            return `tel:${phone.trim()}`;
+        }
+
+        // Safely update social links
+        function setSocialLink(id, url) {
+            const btn = document.getElementById(id);
+            if (!btn) return;
+
+            if (url && url.trim() !== "" && url !== "#") {
+                btn.href = url;
+                btn.target = "_blank";
+                btn.style.opacity = "1";
+                btn.style.pointerEvents = "auto";
+            } else {
+                btn.href = "javascript:void(0)";
+                btn.style.opacity = "0.6";
+            }
+        }
+
+        // Fetch JSON data dynamically & populate UI
+        async function loadRadioData() {
+            const config = getRadioConfig();
+
+            try {
+                const response = await fetch(config.jsonUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                populateUI(data, config.variableName);
+            } catch (error) {
+                console.error("Error loading JSON file:", error);
+                document.getElementById('radioTitle').textContent = config.variableName.toUpperCase();
+                document.getElementById('radioGenre').textContent = "EN VIVO | 24 HS.";
+            } finally {
+                loaderOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    loaderOverlay.style.display = 'none';
+                }, 400);
+            }
+        }
+
+        // Populate HTML elements with JSON data
+        function populateUI(data, fallbackVar) {
+            const radio = (data.radio && data.radio[0]) ? data.radio[0] : {};
+            const panel = (data.panel && data.panel[0]) ? data.panel[0] : {};
+
+            // 1. Rotating Logo (from radio_image_url or panel logo_url)
+            const logoUrl = panel.logo_url || radio.radio_image_url || 'https://logos.suena.live/radiocoap.png';
+            mainLogo.src = logoUrl;
+
+            // 2. Radio Name
+            let radioName = "RADIO COAP";
+            if (fallbackVar && fallbackVar.toLowerCase() === 'radiocoap') {
+                radioName = "RADIO COAP";
+            } else if (panel.radio_name && panel.radio_name.trim() !== "") {
+                radioName = panel.radio_name;
+            } else {
+                radioName = fallbackVar ? fallbackVar.toUpperCase() : "RADIO LIVE";
+            }
+
+            document.getElementById('radioTitle').textContent = radioName;
+
+            // 3. Subtitle / Genre
+            const genreText = radio.radio_genre || "EN VIVO | 24 HS.";
+            document.getElementById('radioGenre').textContent = genreText;
+
+            // 4. Audio Stream URL
+            if (radio.radio_url) {
+                audioStreamUrl = radio.radio_url;
+            }
+
+            // 5. Social Links
+            setSocialLink('whatsappBtn', formatWhatsappUrl(panel.whatsapp_url || panel.call_url));
+            setSocialLink('webBtn', panel.web_url || panel.dominio_url);
+            setSocialLink('callBtn', formatCallUrl(panel.call_url || panel.whatsapp_url));
+            setSocialLink('facebookBtn', panel.facebook_url);
+            setSocialLink('tiktokBtn', panel.tiktok_url || panel.instagram_url);
+
+            // 6. Custom console / background image if provided
+            if (radio.background_image_url && radio.background_image_url.trim() !== "") {
+                const bgLayer = document.getElementById('customBgLayer');
+                bgLayer.style.backgroundImage = `url('${radio.background_image_url}')`;
+            }
+        }
+
+        // Audio Playback Controls
+        playPauseBtn.addEventListener('click', toggleAudioPlayback);
+
+        function toggleAudioPlayback() {
+            if (!audioStreamUrl) return;
+
+            if (isPlaying) {
+                audioPlayer.pause();
+                isPlaying = false;
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+                waveform.classList.remove('playing');
+                mainLogo.classList.add('paused');
+            } else {
+                if (audioPlayer.src !== audioStreamUrl) {
+                    audioPlayer.src = audioStreamUrl;
+                }
+                audioPlayer.play().then(() => {
+                    isPlaying = true;
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'block';
+                    waveform.classList.add('playing');
+                    mainLogo.classList.remove('paused');
+                }).catch(err => {
+                    console.error("Playback error:", err);
+                });
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', loadRadioData);
+    </script>
+</body>
+</html>
