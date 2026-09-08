@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Página no encontrada</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      color: #fff;
+      background:
+        radial-gradient(circle at 20% 20%, #5425a855 0, transparent 35%),
+        radial-gradient(circle at 80% 80%, #0066ff44 0, transparent 35%),
+        #080810;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .box {
+      width: min(680px, 100%);
+      text-align: center;
+      padding: 42px 30px;
+      border: 1px solid #ffffff12;
+      border-radius: 28px;
+      background: #11111bcc;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 25px 80px #0008;
+    }
+
+    .number {
+      font-size: clamp(80px, 18vw, 150px);
+      line-height: .8;
+      font-weight: 900;
+      letter-spacing: -8px;
+
+      background: linear-gradient(135deg, #a855f7, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h1 {
+      margin-top: 25px;
+      font-size: clamp(22px, 4vw, 32px);
+    }
+
+    .text {
+      margin: 12px auto 25px;
+      max-width: 480px;
+      color: #a7a7b4;
+      line-height: 1.5;
+    }
+
+    .home {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .home:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px #6d28d955;
+    }
+
+    /* Publicidad */
+    .ad {
+      margin-top: 30px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      text-align: left;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      background:
+        linear-gradient(135deg, #17142a, #111827);
+      border: 1px solid #8b5cf633;
+
+      transition: .25s;
+    }
+
+    .ad:hover {
+      border-color: #8b5cf6aa;
+      transform: translateY(-2px);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border-radius: 14px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 23px;
+      background: linear-gradient(135deg, #8b5cf6, #2563eb);
+      box-shadow: 0 8px 25px #6d28d944;
+    }
+
+    .ad strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .ad span {
+      color: #9999a8;
+      font-size: 13px;
+    }
+
+    .brand {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #5f6070;
+    }
+
+    @media (max-width: 480px) {
+      .box {
+        padding: 35px 18px;
+        border-radius: 22px;
+      }
+
+      .ad {
+        padding: 15px;
+      }
+
+      .icon {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="box">
+
+    <div class="number">404</div>
+
+    <h1>Ups... esta página no existe</h1>
+
+    <p class="text">
+      Parece que llegaste a un lugar que no está disponible.
+      Volvé al inicio y seguí navegando.
+    </p>
+
+    <a class="home" href="/">
+      ← Volver al inicio
+    </a>
+
+    <!-- Publicidad RadioNube -->
+    <a
+      class="ad"
+      href="https://www.radionube.online/"
+      target="_blank"
+      rel="noopener"
+    >
+      <div class="icon">📻</div>
+
+      <div>
+        <strong>¿Querés tener tu propia radio online?</strong>
+        <span>
+          Streaming 24/7 · Web · Apps · Autodj · Soporte
+          — RadioNube.online
+        </span>
+      </div>
+    </a>
+
+    <div class="brand">
+      Tu sitio · 404
+    </div>
+
+  </main>
+
+</body>
+</html>
